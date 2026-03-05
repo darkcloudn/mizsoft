@@ -1,0 +1,221 @@
+/* ============================================
+   MIZSOFT — FLUID DESIGN SYSTEM (WHITE & BLUE)
+   Concept: Water, Flow, Clarity
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    /* Fluid Palette */
+    --bg-base: #F8FAFC;
+    /* Light gray-blue, like clean water surface */
+    --bg-surface: #FFFFFF;
+    --bg-glass: rgba(255, 255, 255, 0.85);
+
+    --text-main: #0F172A;
+    /* Deep blue-gray for readability */
+    --text-muted: #64748B;
+
+    /* Water Tones */
+    --water-light: #E0F2FE;
+    /* Light sky blue */
+    --water-main: #0EA5E9;
+    /* Bright oceanic blue */
+    --water-deep: #0369A1;
+    /* Deep ocean */
+    --water-glow: rgba(14, 165, 233, 0.4);
+
+    --border-subtle: #E2E8F0;
+
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+
+    --radius-sm: 12px;
+    --radius-md: 24px;
+    --radius-lg: 32px;
+    --radius-pill: 9999px;
+
+    /* Fluid Transitions */
+    --transition-fluid: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-bounce: 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --shadow-fluid: 0 20px 40px -10px rgba(14, 165, 233, 0.15);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-base);
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+}
+
+.text-water {
+    background: linear-gradient(135deg, var(--water-main), var(--water-deep));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* --- Fluid Buttons --- */
+.btn-fluid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 36px;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(135deg, var(--water-main), var(--water-deep));
+    color: white;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-bounce);
+    box-shadow: 0 10px 20px -5px var(--water-glow);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-fluid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--water-light), var(--water-main));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition-fluid);
+}
+
+.btn-fluid:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px -5px var(--water-glow);
+}
+
+.btn-fluid:hover::before {
+    opacity: 1;
+}
+
+.btn-outline-fluid {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 36px;
+    border-radius: var(--radius-pill);
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid var(--water-light);
+    color: var(--water-deep);
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+}
+
+.btn-outline-fluid:hover {
+    background: var(--water-light);
+    transform: translateY(-3px);
+}
+
+/* --- Fluid Cards --- */
+.fluid-card {
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    transition: var(--transition-bounce);
+    overflow: hidden;
+    position: relative;
+}
+
+.fluid-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-fluid);
+    border-color: var(--water-light);
+}
+
+/* Wave Animation Backgrounds */
+.wave-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%230EA5E9" fill-opacity="0.05" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,160C672,160,768,192,864,208C960,224,1056,224,1152,202.7C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') repeat-x;
+    background-size: cover;
+    animation: wave 15s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-1440px);
+    }
+}
+
+/* Floating animation */
+.float-anim {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--water-light);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--water-main);
+}
