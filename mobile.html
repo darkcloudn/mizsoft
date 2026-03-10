@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" id="html-root">
 
 <head>
     <meta charset="UTF-8">
@@ -831,6 +831,46 @@
         .page-end {
             height: 100px;
         }
+
+        /* ─── LANG SWITCHER ──────────────────────────── */
+        .topbar {
+            justify-content: space-between;
+            padding: 0 16px 0 0;
+        }
+
+        .topbar-logo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+            background: rgba(12, 12, 12, .06);
+            border-radius: 100px;
+            padding: 3px;
+            flex-shrink: 0;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-family: var(--f-body);
+            font-size: .68rem;
+            font-weight: 600;
+            color: var(--c-muted);
+            padding: 4px 9px;
+            border-radius: 100px;
+            transition: background .2s, color .2s;
+            letter-spacing: .02em;
+        }
+
+        .lang-btn.active {
+            background: var(--c-ink);
+            color: white;
+        }
     </style>
 </head>
 
@@ -839,6 +879,12 @@
     <!-- ─── TOP BAR ──────────────────────────────────── -->
     <header class="topbar">
         <div class="topbar-logo">Mizsoft</div>
+        <div class="lang-switcher" id="langSwitcher">
+            <button class="lang-btn active" data-lang="vi">VI</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ja">JP</button>
+            <button class="lang-btn" data-lang="ko">KR</button>
+        </div>
     </header>
 
     <!-- ─── MAIN SCROLL ───────────────────────────────── -->
@@ -850,17 +896,14 @@
 
             <div class="m-hero-badge"><span>✦</span> Tokyo × Vietnam Studio</div>
 
-            <h1 class="m-hero-title">
-                Không chỉ<br>code. Chúng<br>tôi <span class="accent">kiến tạo.</span>
-            </h1>
+            <h1 class="m-hero-title" data-i18n="hero.title">Không chỉ<br>code. Chúng<br>tôi <span class="accent">kiến tạo.</span></h1>
 
-            <p class="m-hero-desc">
-                Studio phần mềm tinh tế kết hợp tiêu chuẩn Nhật Bản và công nghệ đột phá để xây sản phẩm thực sự có giá
-                trị.
+            <p class="m-hero-desc" data-i18n="hero.desc">
+                Studio phần mềm tinh tế kết hợp tiêu chuẩn Nhật Bản và công nghệ đột phá để xây sản phẩm thực sự có giá trị.
             </p>
 
             <div class="m-hero-cta">
-                <button class="btn-full" id="open-sheet">Bắt đầu Dự án →</button>
+                <button class="btn-full" id="open-sheet" data-i18n="hero.cta">Bắt đầu Dự án →</button>
                 <a href="#view-work" class="btn-icon">↓</a>
             </div>
         </section>
@@ -879,31 +922,31 @@
 
         <!-- STATS -->
         <section class="section">
-            <p class="section-label">Con số thực</p>
+            <p class="section-label" data-i18n="stats.label">Con số thực</p>
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-num">50<span class="accent">+</span></div>
-                    <div class="stat-label">Dự án xong</div>
+                    <div class="stat-label" data-i18n="stats.projects">Dự án xong</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-num">8<span class="accent">yr</span></div>
-                    <div class="stat-label">Kinh nghiệm</div>
+                    <div class="stat-label" data-i18n="stats.experience">Kinh nghiệm</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-num"><span class="accent">3</span></div>
-                    <div class="stat-label">Quốc gia</div>
+                    <div class="stat-label" data-i18n="stats.countries">Quốc gia</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-num">100<span class="accent">%</span></div>
-                    <div class="stat-label">Đúng deadline</div>
+                    <div class="stat-label" data-i18n="stats.deadline">Đúng deadline</div>
                 </div>
             </div>
         </section>
 
         <!-- WORK -->
         <section class="section" id="view-work">
-            <p class="section-label">Dự án tiêu biểu</p>
-            <h2 class="section-title">Minh chứng bằng <span class="accent">thực tế.</span></h2>
+            <p class="section-label" data-i18n="work.label">Dự án tiêu biểu</p>
+            <h2 class="section-title" data-i18n="work.title">Minh chứng bằng <span class="accent">thực tế.</span></h2>
 
             <div class="swipe-track" id="swipe-track">
                 <div class="swipe-card">
@@ -911,8 +954,7 @@
                     <div class="swipe-card-body">
                         <p class="swipe-card-type">AI · Enterprise</p>
                         <h3 class="swipe-card-name">Omni AI Assistant</h3>
-                        <p class="swipe-card-desc">Trợ lý ảo NLP đa kênh phục vụ 24/7, phản hồi tự nhiên ngay trong Zalo
-                            &amp; LINE.</p>
+                        <p class="swipe-card-desc" data-i18n="work.omni.desc">Trợ lý ảo NLP đa kênh phục vụ 24/7, phản hồi tự nhiên ngay trong Zalo &amp; LINE.</p>
                     </div>
                 </div>
 
@@ -921,8 +963,7 @@
                     <div class="swipe-card-body">
                         <p class="swipe-card-type">Mobile · Commerce</p>
                         <h3 class="swipe-card-name">Zalo Super-App</h3>
-                        <p class="swipe-card-desc">Mini App trong Zalo: đặt hàng, thanh toán, loyalty — 70M+ tiếp cận,
-                            không cài app.</p>
+                        <p class="swipe-card-desc" data-i18n="work.zalo.desc">Mini App trong Zalo: đặt hàng, thanh toán, loyalty — 70M+ tiếp cận, không cài app.</p>
                     </div>
                 </div>
 
@@ -931,8 +972,7 @@
                     <div class="swipe-card-body">
                         <p class="swipe-card-type">Data · Analytics</p>
                         <h3 class="swipe-card-name">Data Hub BI</h3>
-                        <p class="swipe-card-desc">Data Lake real-time + Dashboard BI giúp ban lãnh đạo ra quyết định
-                            chính xác tức thì.</p>
+                        <p class="swipe-card-desc" data-i18n="work.data.desc">Data Lake real-time + Dashboard BI giúp ban lãnh đạo ra quyết định chính xác tức thì.</p>
                     </div>
                 </div>
 
@@ -941,8 +981,7 @@
                     <div class="swipe-card-body">
                         <p class="swipe-card-type">IoT · Cloud</p>
                         <h3 class="swipe-card-name">Smart Factory</h3>
-                        <p class="swipe-card-desc">Giám sát nhà máy thông minh, độ trễ &lt;20ms, uptime 99.99%, điều
-                            khiển edge.</p>
+                        <p class="swipe-card-desc" data-i18n="work.iot.desc">Giám sát nhà máy thông minh, độ trễ &lt;20ms, uptime 99.99%, điều khiển edge.</p>
                     </div>
                 </div>
             </div>
@@ -957,8 +996,8 @@
 
         <!-- SERVICES -->
         <section class="section" id="view-services">
-            <p class="section-label">Dịch vụ</p>
-            <h2 class="section-title">Những gì chúng tôi làm.</h2>
+            <p class="section-label" data-i18n="svc.label">Dịch vụ</p>
+            <h2 class="section-title" data-i18n="svc.title">Những gì chúng tôi làm.</h2>
 
             <ul class="svc-list">
                 <li class="svc-item">
@@ -986,36 +1025,33 @@
 
         <!-- PHILOSOPHY -->
         <section class="section" id="view-phi">
-            <p class="section-label">Triết lý</p>
-            <h2 class="section-title">Ba giá trị <span class="accent">bất biến.</span></h2>
+            <p class="section-label" data-i18n="phi.label">Triết lý</p>
+            <h2 class="section-title" data-i18n="phi.title">Ba giá trị <span class="accent">bất biến.</span></h2>
 
             <div class="phi-item">
                 <div class="phi-num">01 · 品 Hinshitsu</div>
-                <h3 class="phi-name">Chất lượng Tuyệt đối</h3>
-                <p class="phi-desc">Mỗi dòng code như tác phẩm nghệ thuật. Kiến trúc bền vững, security tuyệt đối, không
-                    có chỗ cho bug.</p>
+                <h3 class="phi-name" data-i18n="phi.q1.title">Chất lượng Tuyệt đối</h3>
+                <p class="phi-desc" data-i18n="phi.q1.desc">Mỗi dòng code như tác phẩm nghệ thuật. Kiến trúc bền vững, security tuyệt đối, không có chỗ cho bug.</p>
             </div>
 
             <div class="phi-item">
                 <div class="phi-num">02 · 速 Hayasa</div>
-                <h3 class="phi-name">Sprint Thực sự</h3>
-                <p class="phi-desc">Chúng tôi không bán thời gian — chúng tôi bán kết quả. MVP trong 6 tuần. Production
-                    trong 3 tháng.</p>
+                <h3 class="phi-name" data-i18n="phi.q2.title">Sprint Thực sự</h3>
+                <p class="phi-desc" data-i18n="phi.q2.desc">Chúng tôi không bán thời gian — chúng tôi bán kết quả. MVP trong 6 tuần. Production trong 3 tháng.</p>
             </div>
 
             <div class="phi-item">
                 <div class="phi-num">03 · 心 Kokoro</div>
-                <h3 class="phi-name">Tâm — Omotenashi</h3>
-                <p class="phi-desc">Thấu hiểu sâu sắc business của bạn trước khi mở IDE. Partnership, không phải vendor
-                    giao việc.</p>
+                <h3 class="phi-name" data-i18n="phi.q3.title">Tâm — Omotenashi</h3>
+                <p class="phi-desc" data-i18n="phi.q3.desc">Thấu hiểu sâu sắc business của bạn trước khi mở IDE. Partnership, không phải vendor giao việc.</p>
             </div>
         </section>
 
         <!-- CTA -->
         <div class="cta-band" id="view-contact">
-            <h2 class="cta-band-title">Sẵn sàng<br>bắt đầu?</h2>
-            <p class="cta-band-sub">30 phút tư vấn miễn phí có thể thay đổi hướng đi sản phẩm của bạn.</p>
-            <button class="btn-white" id="open-sheet-2">Đặt lịch ngay →</button>
+            <h2 class="cta-band-title" data-i18n="cta.title">Sẵn sàng<br>bắt đầu?</h2>
+            <p class="cta-band-sub" data-i18n="cta.sub">30 phút tư vấn miễn phí có thể thay đổi hướng đi sản phẩm của bạn.</p>
+            <button class="btn-white" id="open-sheet-2" data-i18n="cta.btn">Đặt lịch ngay →</button>
         </div>
 
         <div class="page-end"></div>
@@ -1076,13 +1112,13 @@
     <div class="sheet-bg" id="sheet-bg"></div>
     <div class="sheet" id="sheet" role="dialog" aria-modal="true">
         <div class="sheet-handle"></div>
-        <h2 class="sheet-title">Bắt đầu Dự án</h2>
+        <h2 class="sheet-title" data-i18n="sheet.title">Bắt đầu Dự án</h2>
 
         <div class="contact-methods">
             <a href="https://zalo.me/YOURPHONE" class="contact-method" target="_blank" rel="noopener">
                 <div class="contact-method-icon">💬</div>
                 <div class="contact-method-label">Zalo</div>
-                <div class="contact-method-val">Chat ngay</div>
+                <div class="contact-method-val" data-i18n="sheet.chat">Chat ngay</div>
             </a>
             <a href="tel:+84123456789" class="contact-method">
                 <div class="contact-method-icon">📞</div>
@@ -1091,22 +1127,22 @@
             </a>
         </div>
 
-        <div class="divider"><span>hoặc để lại lời nhắn</span></div>
+        <div class="divider"><span data-i18n="sheet.or">hoặc để lại lời nhắn</span></div>
 
         <form id="mobile-form">
             <div class="form-field">
-                <label>Tên / Công ty</label>
-                <input type="text" placeholder="Nguyễn Văn A / Công ty ABC">
+                <label data-i18n="sheet.f1.label">Tên / Công ty</label>
+                <input type="text" data-i18n-placeholder="sheet.f1.ph" placeholder="Nguyễn Văn A / Công ty ABC">
             </div>
             <div class="form-field">
-                <label>Số điện thoại / Email</label>
-                <input type="text" placeholder="0912 345 678">
+                <label data-i18n="sheet.f2.label">Số điện thoại / Email</label>
+                <input type="text" data-i18n-placeholder="sheet.f2.ph" placeholder="0912 345 678">
             </div>
             <div class="form-field">
-                <label>Bạn muốn làm gì?</label>
-                <textarea placeholder="Mô tả ngắn dự án, timeline, ngân sách..."></textarea>
+                <label data-i18n="sheet.f3.label">Bạn muốn làm gì?</label>
+                <textarea data-i18n-placeholder="sheet.f3.ph" placeholder="Mô tả ngắn dự án, timeline, ngân sách..."></textarea>
             </div>
-            <button type="submit" class="form-submit">Gửi yêu cầu →</button>
+            <button type="submit" class="form-submit" data-i18n="sheet.submit">Gửi yêu cầu →</button>
         </form>
     </div>
 
@@ -1202,6 +1238,143 @@
                 setTimeout(closeSheet, 2000);
             });
 
+        })();
+    </script>
+
+    <!-- ─── I18N ENGINE ───────────────────────────────── -->
+    <script>
+        (() => {
+            const T = {
+                vi: {
+                    'hero.title': 'Không chỉ<br>code. Chúng<br>tôi <span class="accent">kiến tạo.</span>',
+                    'hero.desc': 'Studio phần mềm tinh tế kết hợp tiêu chuẩn Nhật Bản và công nghệ đột phá để xây sản phẩm thực sự có giá trị.',
+                    'hero.cta': 'Bắt đầu Dự án →',
+                    'stats.label': 'Con số thực',
+                    'stats.projects': 'Dự án xong', 'stats.experience': 'Kinh nghiệm', 'stats.countries': 'Quốc gia', 'stats.deadline': 'Đúng deadline',
+                    'work.label': 'Dự án tiêu biểu', 'work.title': 'Minh chứng bằng <span class="accent">thực tế.</span>',
+                    'work.omni.desc': 'Trợ lý ảo NLP đa kênh phục vụ 24/7, phản hồi tự nhiên ngay trong Zalo &amp; LINE.',
+                    'work.zalo.desc': 'Mini App trong Zalo: đặt hàng, thanh toán, loyalty — 70M+ tiếp cận, không cài app.',
+                    'work.data.desc': 'Data Lake real-time + Dashboard BI giúp ban lãnh đạo ra quyết định chính xác tức thì.',
+                    'work.iot.desc': 'Giám sát nhà máy thông minh, độ trễ &lt;20ms, uptime 99.99%, điều khiển edge.',
+                    'svc.label': 'Dịch vụ', 'svc.title': 'Những gì chúng tôi làm.',
+                    'phi.label': 'Triết lý', 'phi.title': 'Ba giá trị <span class="accent">bất biến.</span>',
+                    'phi.q1.title': 'Chất lượng Tuyệt đối', 'phi.q1.desc': 'Mỗi dòng code như tác phẩm nghệ thuật. Kiến trúc bền vững, security tuyệt đối, không có chỗ cho bug.',
+                    'phi.q2.title': 'Sprint Thực sự', 'phi.q2.desc': 'Chúng tôi không bán thời gian — chúng tôi bán kết quả. MVP trong 6 tuần. Production trong 3 tháng.',
+                    'phi.q3.title': 'Tâm — Omotenashi', 'phi.q3.desc': 'Thấu hiểu sâu sắc business của bạn trước khi mở IDE. Partnership, không phải vendor giao việc.',
+                    'cta.title': 'Sẵn sàng<br>bắt đầu?', 'cta.sub': '30 phút tư vấn miễn phí có thể thay đổi hướng đi sản phẩm của bạn.', 'cta.btn': 'Đặt lịch ngay →',
+                    'sheet.title': 'Bắt đầu Dự án', 'sheet.chat': 'Chat ngay', 'sheet.or': 'hoặc để lại lời nhắn',
+                    'sheet.f1.label': 'Tên / Công ty', 'sheet.f1.ph': 'Nguyễn Văn A / Công ty ABC',
+                    'sheet.f2.label': 'Số điện thoại / Email', 'sheet.f2.ph': '0912 345 678',
+                    'sheet.f3.label': 'Bạn muốn làm gì?', 'sheet.f3.ph': 'Mô tả ngắn dự án, timeline, ngân sách...',
+                    'sheet.submit': 'Gửi yêu cầu →',
+                },
+                en: {
+                    'hero.title': 'We don\'t just<br>code. We <span class="accent">craft.</span>',
+                    'hero.desc': 'A refined software studio blending Japanese standards with cutting-edge technology to build products that truly deliver value.',
+                    'hero.cta': 'Start a Project →',
+                    'stats.label': 'Real Numbers',
+                    'stats.projects': 'Projects Done', 'stats.experience': 'Experience', 'stats.countries': 'Countries', 'stats.deadline': 'On Time',
+                    'work.label': 'Featured Projects', 'work.title': 'Proven by <span class="accent">real products.</span>',
+                    'work.omni.desc': 'Multi-channel NLP AI assistant — 24/7 service with natural responses inside Zalo &amp; LINE.',
+                    'work.zalo.desc': 'Mini App inside Zalo: orders, payments, loyalty — reaching 70M+ users, no install needed.',
+                    'work.data.desc': 'Real-time Data Lake + BI Dashboard for instant, data-driven leadership decisions.',
+                    'work.iot.desc': 'Smart factory monitoring, &lt;20ms latency, 99.99% uptime, edge control.',
+                    'svc.label': 'Services', 'svc.title': 'What we do best.',
+                    'phi.label': 'Philosophy', 'phi.title': 'Three timeless <span class="accent">values.</span>',
+                    'phi.q1.title': 'Absolute Quality', 'phi.q1.desc': 'Every line of code written like art. Robust architecture, absolute security, no room for bugs.',
+                    'phi.q2.title': 'Real Sprints', 'phi.q2.desc': 'We don\'t sell time — we sell results. MVP in 6 weeks. Production-ready in 3 months.',
+                    'phi.q3.title': 'Heart — Omotenashi', 'phi.q3.desc': 'We deeply understand your business before opening the IDE. Partnership, not just a vendor.',
+                    'cta.title': 'Ready to<br>start?', 'cta.sub': 'A free 30-minute consultation could change the direction of your product.', 'cta.btn': 'Book a call →',
+                    'sheet.title': 'Start a Project', 'sheet.chat': 'Chat now', 'sheet.or': 'or leave a message',
+                    'sheet.f1.label': 'Name / Company', 'sheet.f1.ph': 'John Doe / Company ABC',
+                    'sheet.f2.label': 'Phone / Email', 'sheet.f2.ph': '+1 234 567 890',
+                    'sheet.f3.label': 'What do you want to build?', 'sheet.f3.ph': 'Brief description of project, timeline, budget...',
+                    'sheet.submit': 'Send request →',
+                },
+                ja: {
+                    'hero.title': 'ただ<br>コードしない。<span class="accent">創造する。</span>',
+                    'hero.desc': '日本の匠の精神と最先端テクノロジーを融合させた精鋭スタジオ。真に価値あるソフトウェアを構築します。',
+                    'hero.cta': 'プロジェクト開始 →',
+                    'stats.label': '実績数字',
+                    'stats.projects': '完了PJ', 'stats.experience': '経験年数', 'stats.countries': '対応国', 'stats.deadline': '納期厳守',
+                    'work.label': '代表プロジェクト', 'work.title': '実際のプロダクトで<span class="accent">証明。</span>',
+                    'work.omni.desc': 'マルチチャネルNLP AIアシスタント — Zalo・LINE内で24/7自然応答。',
+                    'work.zalo.desc': 'Zalo Mini App: 注文・決済・ロイヤルティ — 7千万+ユーザーにリーチ、インストール不要。',
+                    'work.data.desc': 'リアルタイムData Lake + BIダッシュボード、即座のデータドリブン意思決定。',
+                    'work.iot.desc': 'スマートファクトリー監視、遅延&lt;20ms、稼働率99.99%、エッジ制御。',
+                    'svc.label': 'サービス', 'svc.title': '私たちが最も得意なこと。',
+                    'phi.label': '理念', 'phi.title': '三つの<span class="accent">不変の価値。</span>',
+                    'phi.q1.title': '絶対的品質', 'phi.q1.desc': 'すべてのコードは芸術作品。堅固なアーキテクチャ、完璧なセキュリティ、バグの余地なし。',
+                    'phi.q2.title': 'リアルスプリント', 'phi.q2.desc': '時間ではなく結果を売ります。6週間でMVP、3ヶ月でプロダクション対応。',
+                    'phi.q3.title': '心 — おもてなし', 'phi.q3.desc': 'IDEを開く前にビジネスを深く理解します。ベンダーではなくパートナーとして。',
+                    'cta.title': '始める<br>準備は？', 'cta.sub': '30分の無料相談でプロダクトの方向性が変わるかもしれません。', 'cta.btn': '無料相談を予約 →',
+                    'sheet.title': 'プロジェクト開始', 'sheet.chat': 'チャット', 'sheet.or': 'またはメッセージを残す',
+                    'sheet.f1.label': 'お名前 / 会社名', 'sheet.f1.ph': '山田太郎 / 株式会社ABC',
+                    'sheet.f2.label': '電話番号 / Email', 'sheet.f2.ph': '090-1234-5678',
+                    'sheet.f3.label': '何を作りたいですか？', 'sheet.f3.ph': 'プロジェクト概要、期間、予算を簡単にご記入ください...',
+                    'sheet.submit': '送信する →',
+                },
+                ko: {
+                    'hero.title': '단순히<br>코딩 아닙니다. <span class="accent">창조합니다.</span>',
+                    'hero.desc': '일본 장인 정신과 첨단 기술을 결합한 정예 스튜디오. 진정한 가치를 전달하는 소프트웨어를 만듭니다.',
+                    'hero.cta': '프로젝트 시작 →',
+                    'stats.label': '실제 수치',
+                    'stats.projects': '완료 프로젝트', 'stats.experience': '경험 연수', 'stats.countries': '거점 국가', 'stats.deadline': '납기 준수',
+                    'work.label': '대표 프로젝트', 'work.title': '실제 제품으로 <span class="accent">증명합니다.</span>',
+                    'work.omni.desc': '멀티채널 NLP AI 어시스턴트 — Zalo·LINE 내 24/7 자연 응답.',
+                    'work.zalo.desc': 'Zalo Mini App: 주문·결제·로열티 — 7천만+ 사용자 도달, 앱 설치 불필요.',
+                    'work.data.desc': '실시간 Data Lake + BI 대시보드로 즉각적인 데이터 기반 의사결정.',
+                    'work.iot.desc': '스마트 팩토리 모니터링, &lt;20ms 지연, 99.99% 가동률, 엣지 제어.',
+                    'svc.label': '서비스', 'svc.title': '우리가 가장 잘하는 것.',
+                    'phi.label': '철학', 'phi.title': '세 가지 <span class="accent">불변의 가치.</span>',
+                    'phi.q1.title': '절대적 품질', 'phi.q1.desc': '모든 코드는 예술 작품. 견고한 아키텍처, 완벽한 보안, 버그의 여지 없음.',
+                    'phi.q2.title': '진짜 스프린트', 'phi.q2.desc': '시간이 아닌 결과를 팝니다. 6주 만에 MVP, 3개월 만에 프로덕션 준비.',
+                    'phi.q3.title': '마음 — 오모테나시', 'phi.q3.desc': 'IDE를 열기 전에 비즈니스를 깊이 이해합니다. 벤더가 아닌 파트너로.',
+                    'cta.title': '시작할<br>준비됐나요?', 'cta.sub': '30분 무료 상담이 제품의 방향을 바꿀 수 있습니다.', 'cta.btn': '지금 예약 →',
+                    'sheet.title': '프로젝트 시작', 'sheet.chat': '지금 채팅', 'sheet.or': '또는 메시지 남기기',
+                    'sheet.f1.label': '이름 / 회사명', 'sheet.f1.ph': '홍길동 / ABC 회사',
+                    'sheet.f2.label': '전화번호 / 이메일', 'sheet.f2.ph': '010-1234-5678',
+                    'sheet.f3.label': '무엇을 만들고 싶으신가요?', 'sheet.f3.ph': '프로젝트 개요, 일정, 예상 예산을 간략히 설명해 주세요...',
+                    'sheet.submit': '요청 보내기 →',
+                },
+            };
+
+            let currentLang = localStorage.getItem('miz_lang') || 'vi';
+
+            function applyLang(lang) {
+                currentLang = lang;
+                localStorage.setItem('miz_lang', lang);
+                document.getElementById('html-root').lang = lang;
+
+                const dict = T[lang];
+                if (!dict) return;
+
+                /* text nodes */
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.dataset.i18n;
+                    if (dict[key] !== undefined) el.innerHTML = dict[key];
+                });
+
+                /* placeholder attributes */
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                    const key = el.dataset.i18nPlaceholder;
+                    if (dict[key] !== undefined) el.placeholder = dict[key];
+                });
+
+                /* active button */
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+            }
+
+            /* Bind switcher */
+            document.getElementById('langSwitcher').addEventListener('click', e => {
+                const btn = e.target.closest('.lang-btn');
+                if (btn) applyLang(btn.dataset.lang);
+            });
+
+            /* Init */
+            applyLang(currentLang);
         })();
     </script>
 </body>
