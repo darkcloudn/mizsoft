@@ -4,19 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mizsoft — Code. Launch. Grow.</title>
+    <title>Mizsoft — Giải pháp Open Source</title>
     <meta name="description"
-        content="Mizsoft — Studio phần mềm tinh tế từ Nhật Bản. Chúng tôi kiến tạo sản phẩm số cho tương lai.">
+        content="Khám phá các phần mềm Open Source thay thế cho phần mềm thương mại tại Việt Nam. Giải pháp bản quyền cho doanh nghiệp.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <script src="js/redirect.js" defer></script>
-    <script src="js/theme.js" defer></script>
-        <link
+    <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/main-dark.css">
+    <script src="js/redirect.js" defer></script>
+    <script src="js/theme.js" defer></script>
 </head>
 
 <body>
@@ -32,10 +31,10 @@
     <nav>
         <div class="nav-logo">Mizsoft</div>
         <ul class="nav-links">
-            <li><a href="#work" data-i18n="nav.work">Dự án</a></li>
-            <li><a href="#services" data-i18n="nav.services">Dịch vụ</a></li>
-            <li><a href="#phi" data-i18n="nav.philosophy">Triết lý</a></li>
-            <li><a href="opensource.html">Open Source</a></li>
+            <li><a href="index.html#work" data-i18n="nav.work">Dự án</a></li>
+            <li><a href="index.html#services" data-i18n="nav.services">Dịch vụ</a></li>
+            <li><a href="index.html#phi" data-i18n="nav.philosophy">Triết lý</a></li>
+            <li><a href="#">Open Source</a></li>
         </ul>
         <div style="display:flex;align-items:center;gap:12px;">
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
@@ -55,267 +54,93 @@
 
 
     <!-- ─── HERO ─────────────────────────────────────── -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" style="min-height: 50vh; padding: 180px 48px 80px;">
         <div class="hero-inner">
             <p class="hero-eyebrow">
                 <span class="hero-eyebrow-dot"></span>
-                <span data-i18n="hero.eyebrow">Studio phần mềm · Tokyo &amp; Vietnam</span>
+                <span>Open Source Alternatives</span>
             </p>
 
             <h1 class="hero-title" id="heroTitle">
-                <span class="line"><span class="word" data-i18n="hero.line1">Chúng tôi</span></span>
-                <span class="line"><span class="word" data-i18n="hero.line2a">không chỉ</span> <span class="word accent"
-                        data-i18n="hero.line2b">code.</span></span>
-                <span class="line"><span class="word" data-i18n="hero.line3">Chúng tôi</span></span>
-                <span class="line"><span class="word accent" data-i18n="hero.line4">kiến tạo.</span></span>
+                <span class="line"><span class="word">Thay thế</span></span>
+                <span class="line"><span class="word accent">Phần mềm Crack.</span></span>
             </h1>
 
-            <div class="hero-bottom">
-                <p class="hero-desc" data-i18n="hero.desc">
-                    Mizsoft kết hợp sự tinh tế của nghệ thuật Nhật Bản với sức mạnh công nghệ đột phá — tạo ra những
-                    phần mềm thực sự mang lại giá trị cho người dùng.
+            <div class="hero-bottom" style="margin-top: 40px; padding-top: 0; border-top: none;">
+                <p class="hero-desc" style="max-width: 600px;">
+                    Việc sử dụng phần mềm bẻ khóa mang đến rủi ro khổng lồ về bảo mật (ransomware) và tính pháp lý. Dưới đây là các phần mềm mã nguồn mở & miễn phí chất lượng cao giúp doanh nghiệp Việt Nam số hóa an toàn.
                 </p>
-                <div class="hero-actions">
-                    <button class="btn-primary" id="open-panel-hero" data-i18n="hero.cta1">
-                        Giải pháp của bạn →
-                    </button>
-                    <a href="#work" class="btn-secondary">
-                        <span data-i18n="hero.cta2">Xem Dự án</span> <span class="arrow">↓</span>
-                    </a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- ─── TICKER ────────────────────────────────────── -->
-    <div class="ticker-wrap">
-        <div class="ticker">
-            <div class="ticker-item">AI Chatbot <span class="dot">✦</span> LINE
-                App <span class="dot">✦</span> IoT Platform <span class="dot">✦</span> Data Analytics <span
-                    class="dot">✦</span> ERP System <span class="dot">✦</span> Mobile App <span class="dot">✦</span>
-            </div>
-            <div class="ticker-item" aria-hidden="true">AI Chatbot <span class="dot">✦</span> LINE App <span class="dot">✦</span> IoT Platform <span class="dot">✦</span>
-                Data Analytics <span class="dot">✦</span> ERP System <span class="dot">✦</span> Mobile App <span
-                    class="dot">✦</span></div>
-        </div>
-    </div>
-
-    <!-- ─── STATS ─────────────────────────────────────── -->
-    <div class="stats">
-        <div class="stats-grid">
-            <div class="stat-item reveal">
-                <div class="stat-num">50<span class="accent">+</span></div>
-                <div class="stat-label" data-i18n="stats.projects">Dự án đã hoàn thành</div>
-            </div>
-            <div class="stat-item reveal">
-                <div class="stat-num">8<span class="accent">yr</span></div>
-                <div class="stat-label" data-i18n="stats.experience">Kinh nghiệm thực chiến</div>
-            </div>
-            <div class="stat-item reveal">
-                <div class="stat-num"><span class="accent">3</span> QG</div>
-                <div class="stat-label" data-i18n="stats.countries">Nhật Bản · Việt Nam · ASEAN</div>
-            </div>
-            <div class="stat-item reveal">
-                <div class="stat-num">100<span class="accent">%</span></div>
-                <div class="stat-label" data-i18n="stats.deadline">Cam kết đúng deadline</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ─── SERVICES ──────────────────────────────────── -->
-    <section class="services" id="services">
+    <!-- ─── ALTERNATIVES LIST ─────────────────────────── -->
+    <section class="services" id="alternatives" style="padding: 40px 0 120px;">
         <div class="container">
-            <div class="services-header reveal">
-                <h2 class="services-title" data-i18n="services.title">Những gì chúng<br>tôi làm tốt nhất</h2>
-                <p class="services-sub" data-i18n="services.sub">Từ ý tưởng đến production — chúng tôi đồng hành xuyên
-                    suốt hành trình chuyển đổi số của bạn.</p>
+            <div class="services-header reveal" style="margin-bottom: 40px; padding-bottom: 20px;">
+                <h2 class="services-title" style="font-size: 2rem;">Các Giải Pháp Khuyên Dùng</h2>
             </div>
 
             <div class="bento-grid">
-                <div class="bento-card bento-large reveal" data-service="ai" style="cursor:pointer;">
+                <!-- Group 1 -->
+                <div class="bento-card bento-large reveal">
                     <span class="service-num">01</span>
-                    <h3 class="service-name">AI &amp; Chatbot Solution</h3>
+                    <h3 class="service-name">Công cụ Văn phòng</h3>
                     <div class="service-tags">
-                        <span class="tag">GPT-4o</span>
-                        <span class="tag">NLP</span>
-                        <span class="tag">Multi-channel</span>
+                        <span class="tag" style="text-decoration: line-through; color: #ff4d4f; border-color: rgba(255,77,79,0.3);">Microsoft Office</span>
+                        <span class="tag" style="text-decoration: line-through; color: #ff4d4f; border-color: rgba(255,77,79,0.3);">Adobe Acrobat Pro</span>
                     </div>
-                    <p>Giải pháp chatbot thông minh tích hợp trí tuệ nhân tạo thế hệ mới. Đem lại khả năng thấu hiểu ngôn ngữ tự nhiên vượt trội cho doanh nghiệp.</p>
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--c-line);">
+                        <div style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-cyan); margin-bottom: 8px;">Thay thế bằng:</div>
+                        <div style="font-family: var(--f-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; color: var(--c-ink);">LibreOffice / Google Workspace / WPS Office</div>
+                        <p style="font-size: 1.05rem;">Thay vì rủi ro khi dùng bản crack của MS Word, Excel, PowerPoint, doanh nghiệp có thể sử dụng LibreOffice miễn phí hoàn toàn hoặc nền tảng đám mây Google Workspace/WPS Office để hợp tác thời gian thực.</p>
+                    </div>
                 </div>
-                <div class="bento-card reveal" data-service="data" style="cursor:pointer;">
+                
+                <!-- Group 2 -->
+                <div class="bento-card reveal">
                     <span class="service-num">02</span>
-                    <h3 class="service-name">Data Platform &amp; BI</h3>
+                    <h3 class="service-name">Thiết kế & Đồ họa</h3>
                     <div class="service-tags">
-                        <span class="tag">Data Lake</span>
-                        <span class="tag">Analytics</span>
+                        <span class="tag" style="text-decoration: line-through; color: #ff4d4f; border-color: rgba(255,77,79,0.3);">Adobe Photoshop</span>
+                        <span class="tag" style="text-decoration: line-through; color: #ff4d4f; border-color: rgba(255,77,79,0.3);">Illustrator</span>
                     </div>
-                    <p>Xây dựng hệ thống dữ liệu doanh nghiệp và biểu đồ phân tích trực quan.</p>
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--c-line);">
+                        <div style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-cyan); margin-bottom: 8px;">Thay thế bằng:</div>
+                        <div style="font-family: var(--f-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--c-ink);">GIMP / Photopea / Inkscape / Figma</div>
+                        <p style="font-size: 0.95rem;">GIMP và Photopea là sự thay thế cực kỳ mạnh mẽ cho Photoshop. Figma dẫn đầu xu hướng UI/UX với gói miễn phí dư sức cho cá nhân.</p>
+                    </div>
                 </div>
-                <div class="bento-card reveal" data-service="iot" style="cursor:pointer;">
+
+                <!-- Group 3 -->
+                <div class="bento-card reveal">
                     <span class="service-num">03</span>
-                    <h3 class="service-name">IoT &amp; Cloud</h3>
+                    <h3 class="service-name">Dựng phim & Video</h3>
                     <div class="service-tags">
-                        <span class="tag">MQTT</span>
-                        <span class="tag">Edge</span>
+                        <span class="tag" style="text-decoration: line-through; color: #ff4d4f; border-color: rgba(255,77,79,0.3);">Premiere Pro</span>
+                        <span class="tag" style="text-decoration: line-through; color: #ff4d4f; border-color: rgba(255,77,79,0.3);">After Effects</span>
                     </div>
-                    <p>Kết nối phần cứng với nền tảng đám mây an toàn, độ trễ cực thấp.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── WORK ──────────────────────────────────────── -->
-    <section class="work" id="work">
-        <div class="container">
-            <div class="work-header reveal">
-                <p class="section-label" data-i18n="work.label">Dự án Tiêu biểu</p>
-                <h2 class="work-title">
-                    <span data-i18n="work.title1">Minh chứng bằng</span><br><span class="accent"
-                        data-i18n="work.title2">sản phẩm thực.</span>
-                </h2>
-            </div>
-
-            <div class="work-grid">
-                <div class="work-card reveal" data-project="omni" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#0a0a14,#0d1a4a);">
-                        <span style="font-size:5rem;">🤖</span>
-                    </div>
-                    <div class="work-card-body">
-                        <p class="work-card-type">AI · Enterprise</p>
-                        <h3 class="work-card-name">Omni AI Assistant</h3>
-                        <p class="work-card-desc" data-i18n="work.omni.desc">Trợ lý ảo NLP tích hợp đa kênh. Phản hồi tự nhiên, xử lý ngữ cảnh phức tạp, phục vụ 24/7 không gián đoạn.</p>
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--c-line);">
+                        <div style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-cyan); margin-bottom: 8px;">Thay thế bằng:</div>
+                        <div style="font-family: var(--f-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--c-ink);">DaVinci Resolve / Kdenlive / CapCut</div>
+                        <p style="font-size: 0.95rem;">DaVinci Resolve cung cấp phiên bản hoàn toàn miễn phí nhưng tích hợp bộ tính năng chỉnh màu đỉnh cao chuẩn Hollywood. CapCut PC cực kỳ tiện dụng.</p>
                     </div>
                 </div>
 
-                <div class="work-card reveal" data-project="data" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#14000a,#4a0020);">
-                        <span style="font-size:5rem;">📊</span>
+                <!-- Group 4 -->
+                <div class="bento-card reveal">
+                    <span class="service-num">04</span>
+                    <h3 class="service-name">Hệ thống & Tiện ích</h3>
+                    <div class="service-tags">
+                        <span class="tag" style="text-decoration: line-through; color: #ff4d4f; border-color: rgba(255,77,79,0.3);">Windows OS</span>
+                        <span class="tag" style="text-decoration: line-through; color: #ff4d4f; border-color: rgba(255,77,79,0.3);">WinRAR</span>
+                        <span class="tag" style="text-decoration: line-through; color: #ff4d4f; border-color: rgba(255,77,79,0.3);">IDM</span>
                     </div>
-                    <div class="work-card-body">
-                        <p class="work-card-type">Data · Analytics</p>
-                        <h3 class="work-card-name">Enterprise Data Hub</h3>
-                        <p class="work-card-desc" data-i18n="work.data.desc">Data Lake + BI Dashboard real-time giúp ban
-                            lãnh đạo ra quyết định dựa trên dữ liệu chính xác tức thì.</p>
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--c-line);">
+                        <div style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-cyan); margin-bottom: 8px;">Thay thế bằng:</div>
+                        <div style="font-family: var(--f-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--c-ink);">Ubuntu Linux / 7-Zip / FDM</div>
+                        <p style="font-size: 0.95rem;">Doanh nghiệp có thể chuyển sang Ubuntu vì tính ổn định và miễn phí. Đối với tiện ích, 7-Zip thay thế hoàn toàn WinRAR, FDM vượt trội hơn hẳn IDM.</p>
                     </div>
-                </div>
-
-                <div class="work-card reveal" data-project="iot" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#091414,#00404a);">
-                        <span style="font-size:5rem;">🔌</span>
-                    </div>
-                    <div class="work-card-body">
-                        <p class="work-card-type">IoT · Infrastructure</p>
-                        <h3 class="work-card-name">Smart Factory Core</h3>
-                        <p class="work-card-desc" data-i18n="work.iot.desc">Hệ thống giám sát và điều khiển thiết bị nhà
-                            máy thông minh với độ trễ dưới 20ms, uptime 99.99%.</p>
-                    </div>
-                </div>
-                <div class="work-card reveal" data-project="etl" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#1a052b,#4c0c7a);">
-                        <span style="font-size:5rem;">🔄</span>
-                    </div>
-                    <div class="work-card-body">
-                        <p class="work-card-type">Data Engineering</p>
-                        <h3 class="work-card-name">Real-time ETL Pipeline</h3>
-                        <p class="work-card-desc" data-i18n="work.etl.desc">Hệ thống luồng dữ liệu thời gian thực, xử lý hàng tỷ event mỗi ngày với kiến trúc luồng.</p>
-                    </div>
-                </div>
-
-                <div class="work-card reveal" data-project="erp" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#00142b,#003a7a);">
-                        <span style="font-size:5rem;">🏢</span>
-                    </div>
-                    <div class="work-card-body">
-                        <p class="work-card-type">Enterprise Software</p>
-                        <h3 class="work-card-name">NextGen ERP & CRM</h3>
-                        <p class="work-card-desc" data-i18n="work.erp.desc">Hệ thống quản trị doanh nghiệp toàn diện. Tích hợp AI dự báo nhu cầu và quản lý chuỗi cung ứng.</p>
-                    </div>
-                </div>
-
-                <div class="work-card reveal" data-project="wallet" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#052b14,#0c7a36);">
-                        <span style="font-size:5rem;">💳</span>
-                    </div>
-                    <div class="work-card-body">
-                        <p class="work-card-type">Mobile App · Fintech</p>
-                        <h3 class="work-card-name">Fintech Mobile Wallet</h3>
-                        <p class="work-card-desc" data-i18n="work.wallet.desc">Ứng dụng ví điện tử siêu mượt đạt chuẩn PCI-DSS, hỗ trợ thanh toán QR code, eKYC.</p>
-                    </div>
-                </div>
-
-                <div class="work-card reveal" data-project="smartlight" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#2b2a0a,#605f0f);">
-                        <span style="font-size:5rem;">💡</span>
-                    </div>
-                    <div class="work-card-body">
-                        <p class="work-card-type">IoT · Smart City</p>
-                        <h3 class="work-card-name">SmartLight Platform</h3>
-                        <p class="work-card-desc" data-i18n="work.smartlight.desc">Hệ thống quản lý chiếu sáng thông minh quy mô thành phố với bản đồ GIS realtime.</p>
-                    </div>
-                </div>
-
-                <div class="work-card reveal" data-project="edtech" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#0a1a2b,#0f2f60);">
-                        <span style="font-size:5rem;">🎓</span>
-                    </div>
-                    <div class="work-card-body">
-                        <p class="work-card-type">EdTech · Platform</p>
-                        <h3 class="work-card-name">EduCore LMS</h3>
-                        <p class="work-card-desc" data-i18n="work.edtech.desc">Nền tảng EdTech quản lý trung tâm toàn diện, tích hợp AI chấm điểm phát âm.</p>
-                    </div>
-                </div>
-
-                <div class="work-card reveal" data-project="camera" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#2b0a2a,#600f5f);">
-                        <span style="font-size:5rem;">📹</span>
-                    </div>
-                    <div class="work-card-body">
-                        <p class="work-card-type">Computer Vision · AI</p>
-                        <h3 class="work-card-name">Vision AI Engine</h3>
-                        <p class="work-card-desc" data-i18n="work.camera.desc">Phân tích Video AI thời gian thực, nhận diện khuôn mặt và cảnh báo an ninh.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── PHILOSOPHY ────────────────────────────────── -->
-    <section class="phi" id="phi">
-        <div class="container">
-            <div class="phi-wrap">
-                <div class="phi-left reveal">
-                    <p class="section-label" data-i18n="phi.label">Triết lý</p>
-                    <h2 class="phi-title" data-i18n="phi.title">Ba giá trị<br>bất biến</h2>
-                    <div class="phi-kanji">品 速 心</div>
-                </div>
-
-                <div class="phi-right">
-                    <ul class="phi-items">
-                        <li class="phi-item reveal">
-                            <span class="phi-item-num">01</span>
-                            <div class="phi-item-content">
-                                <h3 data-i18n="phi.q1.title">品 — Hinshitsu (Chất lượng)</h3>
-                                <p data-i18n="phi.q1.desc">Mỗi dòng code đều được viết như tác phẩm nghệ thuật. Không có
-                                    chỗ cho bug, không có ngoại lệ về security. Kiến trúc bền vững cho 10 năm tới.</p>
-                            </div>
-                        </li>
-                        <li class="phi-item reveal">
-                            <span class="phi-item-num">02</span>
-                            <div class="phi-item-content">
-                                <h3 data-i18n="phi.q2.title">速 — Hayasa (Tốc độ)</h3>
-                                <p data-i18n="phi.q2.desc">Sprint 2 tuần, release thực sự. Chúng tôi không bán thời gian
-                                    — chúng tôi bán kết quả. MVP trong 6 tuần, production-ready trong 3 tháng.</p>
-                            </div>
-                        </li>
-                        <li class="phi-item reveal">
-                            <span class="phi-item-num">03</span>
-                            <div class="phi-item-content">
-                                <h3 data-i18n="phi.q3.title">心 — Kokoro (Tâm)</h3>
-                                <p data-i18n="phi.q3.desc">Omotenashi — tinh thần phục vụ từ trái tim. Thấu hiểu sâu sắc
-                                    business của bạn trước khi mở IDE. Partnership, không phải vendor.</p>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -335,7 +160,7 @@
         <div class="footer-copy">© 2026 Mizsoft JSC · Tokyo &amp; Vietnam</div>
         <div class="footer-links">
             <a href="#">Privacy</a>
-            <a href="#">X / Twitter</a>
+            <a href="#">Zalo</a>
             <a href="#">LinkedIn</a>
         </div>
     </footer>
@@ -515,7 +340,7 @@
                     name: 'AI & Chatbot Solution',
                     emoji: '🤖',
                     bg: 'linear-gradient(135deg,#0a0a14,#0d1a4a)',
-                    tagline: 'Giải pháp trợ lý ảo NLP toàn diện — tích hợp đa kênh LINE, Web, Telegram. Hiểu tiếng Việt & tiếng Nhật tự nhiên, phản hồi trong 70ms, vận hành 24/7 không cần can thiệp.',
+                    tagline: 'Giải pháp trợ lý ảo NLP toàn diện — tích hợp đa kênh Zalo, LINE, Web, Telegram. Hiểu tiếng Việt & tiếng Nhật tự nhiên, phản hồi trong 70ms, vận hành 24/7 không cần can thiệp.',
                     metrics: [
                         { val: '70ms', label: 'Thời gian phản hồi TB' },
                         { val: '99.9%', label: 'Uptime đảm bảo' },
@@ -523,16 +348,37 @@
                     ],
                     features: [
                         'Hiểu ngữ cảnh hội thoại nhiều lượt — tiếng Việt & tiếng Nhật chính xác cao',
-                        'Tích hợp sẵn LINE Messaging API, Web Widget, Facebook Messenger',
+                        'Tích hợp sẵn Zalo OA, LINE Messaging API, Web Widget, Facebook Messenger',
                         'Kết nối CRM / ERP / ticketing qua REST API & Webhook không cần code thêm',
                         'Fine-tune mô hình định kỳ từ lịch sử hội thoại thực — tăng độ chính xác theo thời gian',
                         'Dashboard realtime: intent heatmap, resolution rate, CSAT, drop-off analysis',
                         'Fallback thông minh sang live-agent khi confidence thấp — trải nghiệm không đứt đoạn',
                         'Tuân thủ PDPA / GDPR — dữ liệu mã hóa AES-256 end-to-end',
                     ],
-                    tech: ['GPT-4o', 'Claude 3.5', 'LangChain', 'LangGraph', 'FastAPI', 'Node.js', 'Redis', 'PostgreSQL', 'LINE Messaging API', 'GCP Cloud Run', 'Docker'],
+                    tech: ['GPT-4o', 'Claude 3.5', 'LangChain', 'LangGraph', 'FastAPI', 'Node.js', 'Redis', 'PostgreSQL', 'Zalo OA API', 'LINE Messaging API', 'GCP Cloud Run', 'Docker'],
                 },
-
+                miniapp: {
+                    type: 'Mobile · Mini App · Social Commerce',
+                    name: 'Mini App (Zalo / LINE)',
+                    emoji: '📲',
+                    bg: 'linear-gradient(135deg,#001a08,#004d1f)',
+                    tagline: 'Ứng dụng nhúng trực tiếp vào Zalo (70M+ users) và LINE (95M+ users) — không cần cài app riêng. Đặt hàng, thanh toán, loyalty, CSKH trong một luồng liền mạch ngay trong tin nhắn.',
+                    metrics: [
+                        { val: '165M+', label: 'Người dùng tiếp cận' },
+                        { val: '2.1s', label: 'Thời gian load TB' },
+                        { val: '40%', label: 'Tăng tỷ lệ convert' },
+                    ],
+                    features: [
+                        'Tích hợp Zalo Pay & LINE Pay — thanh toán 1 chạm, không redirect ra ngoài',
+                        'Loyalty & điểm thưởng realtime, đồng bộ với POS & hệ thống offline',
+                        'Push notification thông minh theo hành vi — tỷ lệ mở cao hơn 3x so với SMS',
+                        'Catalog sản phẩm dynamic, live search & filter instant không reload trang',
+                        'Group ordering cho B2B — đặt hàng nhóm, split bill, duyệt đa cấp',
+                        'Offline-first PWA — hoạt động trong vùng sóng kém, đồng bộ khi có mạng lại',
+                        'Deep link & QR code generator tích hợp cho mọi campaign marketing',
+                    ],
+                    tech: ['React', 'TypeScript', 'Vite', 'Node.js', 'MongoDB', 'Redis', 'Cloud Firestore', 'GitHub Actions CI/CD'],
+                },
                 data: {
                     type: 'Data Engineering · Analytics · BI',
                     name: 'Data Platform & BI',
@@ -644,16 +490,10 @@
                     'stats.projects': 'Dự án đã hoàn thành', 'stats.experience': 'Kinh nghiệm thực chiến', 'stats.countries': 'Nhật Bản · Việt Nam · ASEAN', 'stats.deadline': 'Cam kết đúng deadline',
                     'services.title': 'Những gì chúng<br>tôi làm tốt nhất', 'services.sub': 'Từ ý tưởng đến production — chúng tôi đồng hành xuyên suốt hành trình chuyển đổi số của bạn.',
                     'work.label': 'Dự án Tiêu biểu', 'work.title1': 'Minh chứng bằng', 'work.title2': 'sản phẩm thực.',
-                    'work.omni.desc': 'Trợ lý ảo NLP tích hợp đa kênh. Phản hồi tự nhiên, xử lý ngữ cảnh phức tạp, phục vụ 24/7 không gián đoạn.',
-
+                    'work.omni.desc': 'Trợ lý ảo NLP tích hợp đa kênh — Zalo, LINE, Web. Phản hồi tự nhiên, xử lý ngữ cảnh phức tạp, phục vụ 24/7 không gián đoạn.',
+                    'work.zalo.desc': 'Mini App tích hợp trong Zalo phục vụ hơn 70M người dùng — đặt hàng, thanh toán, loyalty trong một luồng liền mạch.',
                     'work.data.desc': 'Data Lake + BI Dashboard real-time giúp ban lãnh đạo ra quyết định dựa trên dữ liệu chính xác tức thì.',
                     'work.iot.desc': 'Hệ thống giám sát và điều khiển thiết bị nhà máy thông minh với độ trễ dưới 20ms, uptime 99.99%.',
-                    'work.etl.desc': 'Hệ thống luồng dữ liệu thời gian thực, xử lý hàng tỷ event mỗi ngày với kiến trúc luồng.',
-                    'work.erp.desc': 'Hệ thống quản trị doanh nghiệp toàn diện. Tích hợp AI dự báo nhu cầu và quản lý chuỗi cung ứng.',
-                    'work.wallet.desc': 'Ứng dụng ví điện tử siêu mượt đạt chuẩn PCI-DSS, hỗ trợ thanh toán QR code, eKYC.',
-                    'work.smartlight.desc': 'Hệ thống quản lý chiếu sáng thông minh quy mô thành phố với bản đồ GIS realtime.',
-                    'work.edtech.desc': 'Nền tảng EdTech quản lý trung tâm toàn diện, tích hợp AI chấm điểm phát âm.',
-                    'work.camera.desc': 'Phân tích Video AI thời gian thực, nhận diện khuôn mặt và cảnh báo an ninh.',
                     'phi.label': 'Triết lý', 'phi.title': 'Ba giá trị<br>bất biến',
                     'phi.q1.title': '品 — Hinshitsu (Chất lượng)', 'phi.q1.desc': 'Mỗi dòng code đều được viết như tác phẩm nghệ thuật. Không có chỗ cho bug, không có ngoại lệ về security. Kiến trúc bền vững cho 10 năm tới.',
                     'phi.q2.title': '速 — Hayasa (Tốc độ)', 'phi.q2.desc': 'Sprint 2 tuần, release thực sự. Chúng tôi không bán thời gian — chúng tôi bán kết quả. MVP trong 6 tuần, production-ready trong 3 tháng.',
@@ -674,16 +514,10 @@
                     'stats.projects': '完了プロジェクト', 'stats.experience': '実戦経験', 'stats.countries': '日本 · ベトナム · ASEAN', 'stats.deadline': '納期厳守率',
                     'services.title': '私たちが最も<br>得意とすること', 'services.sub': 'アイデアからプロダクションまで — デジタルトランスフォーメーションの旅全体に並走します。',
                     'work.label': '代表プロジェクト', 'work.title1': '実際のプロダクトで', 'work.title2': '証明します。',
-                    'work.omni.desc': 'マルチチャネル統合NLP AIアシスタント。自然な応答、複雑なコンテキスト処理、24/7継続稼働。',
-
+                    'work.omni.desc': 'マルチチャネル統合NLP AIアシスタント — Zalo、LINE、Web。自然な応答、複雑なコンテキスト処理、24/7継続稼働。',
+                    'work.zalo.desc': 'Zaloエコシステムに深く統合されたMini App — 7,000万以上のユーザーに対応。注文、決済、ロイヤルティをシームレスに。',
                     'work.data.desc': 'リアルタイムData Lake + BIダッシュボードで経営陣が正確なデータに基づく意思決定を即座に実現。',
                     'work.iot.desc': '遅延20ms以下・稼働率99.99%のスマートファクトリー監視・制御システム。',
-                    'work.etl.desc': 'ストリーミングアーキテクチャにより1日数十億イベントを処理するリアルタイムETLデータパイプライン。',
-                    'work.erp.desc': '包括的なエンタープライズ管理システム。AI需要予測とサプライチェーン最適化を統合。',
-                    'work.wallet.desc': 'PCI-DSS準拠の超高速モバイルウォレット。QR決済とeKYCをサポート。',
-                    'work.smartlight.desc': 'リアルタイムGISマップを備えた都市規模のスマート照明管理システム。',
-                    'work.edtech.desc': 'AI発音採点を統合した包括的なEdTechセンター管理プラットフォーム。',
-                    'work.camera.desc': 'リアルタイムAIビデオ分析、顔認識、およびセキュリティアラート。',
                     'phi.label': '理念', 'phi.title': '三つの<br>不変の価値',
                     'phi.q1.title': '品 — 品質 (Quality)', 'phi.q1.desc': 'すべてのコードは芸術作品として書かれます。バグの余地なし、セキュリティに例外なし。10年先を見据えた堅固なアーキテクチャ。',
                     'phi.q2.title': '速 — 速度 (Speed)', 'phi.q2.desc': '2週間スプリント、真のリリース。私たちは時間を売らない — 結果を売ります。6週間でMVP、3ヶ月でプロダクション対応。',
@@ -704,16 +538,10 @@
                     'stats.projects': 'Projects Delivered', 'stats.experience': 'Years of Expertise', 'stats.countries': 'Japan · Vietnam · ASEAN', 'stats.deadline': 'On-time Delivery',
                     'services.title': 'What we do<br>best', 'services.sub': 'From idea to production — we partner with you through every step of your digital transformation.',
                     'work.label': 'Featured Projects', 'work.title1': 'Proven by', 'work.title2': 'real products.',
-                    'work.omni.desc': 'Multi-channel NLP AI assistant. Natural responses, complex context handling, 24/7 uninterrupted service.',
-
+                    'work.omni.desc': 'Multi-channel NLP AI assistant — Zalo, LINE, Web. Natural responses, complex context handling, 24/7 uninterrupted service.',
+                    'work.zalo.desc': 'Mini App deeply integrated into Zalo serving 70M+ users — ordering, payment, and loyalty in one seamless flow.',
                     'work.data.desc': 'Real-time Data Lake + BI Dashboard enabling leadership to make data-driven decisions instantly.',
                     'work.iot.desc': 'Smart factory monitoring and control system with sub-20ms latency and 99.99% uptime.',
-                    'work.etl.desc': 'Real-time data streaming pipeline processing billions of events daily with Kappa architecture.',
-                    'work.erp.desc': 'Comprehensive enterprise management system. Integrated AI demand forecasting and supply chain management.',
-                    'work.wallet.desc': 'Ultra-smooth PCI-DSS compliant mobile wallet supporting QR payments and eKYC.',
-                    'work.smartlight.desc': 'City-scale smart lighting management system with real-time GIS mapping.',
-                    'work.edtech.desc': 'Comprehensive EdTech center management platform integrating AI pronunciation scoring.',
-                    'work.camera.desc': 'Real-time AI video analysis, face recognition, and security alerts.',
                     'phi.label': 'Philosophy', 'phi.title': 'Three timeless<br>values',
                     'phi.q1.title': '品 — Hinshitsu (Quality)', 'phi.q1.desc': 'Every line of code is written like a work of art. No room for bugs, no exceptions on security. Architecture built to last 10 years.',
                     'phi.q2.title': '速 — Hayasa (Speed)', 'phi.q2.desc': '2-week sprints, real releases. We don\'t sell time — we sell outcomes. MVP in 6 weeks, production-ready in 3 months.',
@@ -734,16 +562,10 @@
                     'stats.projects': '완료된 프로젝트', 'stats.experience': '실전 경험', 'stats.countries': '일본 · 베트남 · ASEAN', 'stats.deadline': '납기 준수율',
                     'services.title': '우리가 가장<br>잘 하는 것', 'services.sub': '아이디어부터 프로덕션까지 — 디지털 전환의 여정 전체에 함께합니다.',
                     'work.label': '대표 프로젝트', 'work.title1': '실제 제품으로', 'work.title2': '증명합니다.',
-                    'work.omni.desc': '멀티채널 NLP AI 어시스턴트. 자연스러운 응답, 복잡한 컨텍스트 처리, 24/7 무중단 서비스.',
-
+                    'work.omni.desc': '멀티채널 NLP AI 어시스턴트 — Zalo, LINE, Web. 자연스러운 응답, 복잡한 컨텍스트 처리, 24/7 무중단 서비스.',
+                    'work.zalo.desc': 'Zalo 생태계에 깊이 통합된 Mini App — 7천만 명 이상의 사용자에게 주문, 결제, 로열티를 하나의 흐름으로.',
                     'work.data.desc': '실시간 Data Lake + BI 대시보드로 경영진이 정확한 데이터 기반 의사결정을 즉시 내릴 수 있습니다.',
                     'work.iot.desc': '20ms 이하 지연시간과 99.99% 가동률의 스마트 팩토리 모니터링 및 제어 시스템.',
-                    'work.etl.desc': '스트리밍 아키텍처로 매일 수십억 개의 이벤트를 처리하는 실시간 데이터 파이프라인.',
-                    'work.erp.desc': '포괄적인 기업 관리 시스템. AI 수요 예측 및 공급망 관리 통합.',
-                    'work.wallet.desc': 'PCI-DSS를 준수하는 초고속 모바일 지갑. QR 결제 및 eKYC 지원.',
-                    'work.smartlight.desc': '실시간 GIS 맵핑을 갖춘 도시 규모 스마트 조명 관리 시스템.',
-                    'work.edtech.desc': 'AI 발음 채점을 통합한 포괄적인 EdTech 센터 관리 플랫폼.',
-                    'work.camera.desc': '실시간 AI 비디오 분석, 얼굴 인식 및 보안 경고.',
                     'phi.label': '철학', 'phi.title': '세 가지<br>불변의 가치',
                     'phi.q1.title': '品 — 품질 (Quality)', 'phi.q1.desc': '모든 코드는 예술 작품처럼 작성됩니다. 버그의 여지 없음, 보안 예외 없음. 10년을 위한 견고한 아키텍처.',
                     'phi.q2.title': '速 — 속도 (Speed)', 'phi.q2.desc': '2주 스프린트, 실제 릴리즈. 우리는 시간을 팔지 않습니다 — 결과를 팝니다. 6주 만에 MVP, 3개월 만에 프로덕션 준비.',
@@ -813,7 +635,7 @@
                     name: 'Omni AI Assistant',
                     emoji: '🤖',
                     bg: 'linear-gradient(135deg,#0a0a14,#0d1a4a)',
-                    tagline: 'Trợ lý ảo NLP đa kênh — LINE, Web — phản hồi tự nhiên, xử lý ngữ cảnh phức tạp, vận hành 24/7 không gián đoạn. Được tích hợp cho doanh nghiệp vừa và lớn tại Việt Nam và Nhật Bản.',
+                    tagline: 'Trợ lý ảo NLP đa kênh — Zalo, LINE, Web — phản hồi tự nhiên, xử lý ngữ cảnh phức tạp, vận hành 24/7 không gián đoạn. Được tích hợp cho doanh nghiệp vừa và lớn tại Việt Nam và Nhật Bản.',
                     metrics: [
                         { val: '70ms', label: 'Thời gian phản hồi TB' },
                         { val: '99.9%', label: 'Uptime đảm bảo' },
@@ -827,9 +649,29 @@
                         'Fallback thông minh sang live-agent khi độ tin cậy thấp',
                         'Tuân thủ PDPA / GDPR, dữ liệu mã hóa end-to-end',
                     ],
-                    tech: ['GPT-4o fine-tuned', 'LangChain', 'Node.js', 'FastAPI', 'Redis', 'PostgreSQL', 'LINE Messaging API', 'Docker', 'GCP Cloud Run'],
+                    tech: ['GPT-4o fine-tuned', 'LangChain', 'Node.js', 'FastAPI', 'Redis', 'PostgreSQL', 'Zalo OA API', 'LINE Messaging API', 'Docker', 'GCP Cloud Run'],
                 },
-
+                zalo: {
+                    type: 'Mobile · Social Commerce',
+                    name: 'Zalo Super-App',
+                    emoji: '📲',
+                    bg: 'linear-gradient(135deg,#001a08,#004d1f)',
+                    tagline: 'Mini App tích hợp sâu vào hệ sinh thái Zalo — 70M+ người dùng Việt Nam. Đặt hàng, thanh toán, loyalty program và CSKH trong một luồng liền mạch, không cần tải app riêng.',
+                    metrics: [
+                        { val: '70M+', label: 'Người dùng tiếp cận' },
+                        { val: '2.1s', label: 'Thời gian load TB' },
+                        { val: '40%', label: 'Tăng tỷ lệ convert' },
+                    ],
+                    features: [
+                        'Tích hợp Zalo Pay — thanh toán 1 chạm, không redirect',
+                        'Loyalty & điểm thưởng realtime, đồng bộ với POS offline',
+                        'Push notification thông minh dựa trên hành vi mua sắm',
+                        'Catalog sản phẩm dynamic, filter & tìm kiếm instant',
+                        'Hỗ trợ đặt hàng nhóm (Group Ordering) cho B2B',
+                        'Offline-first — hoạt động trong vùng sóng kém',
+                    ],
+                    tech: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Redis', 'Cloud Firestore', 'CI/CD GitHub Actions'],
+                },
                 data: {
                     type: 'Data · Analytics',
                     name: 'Enterprise Data Hub',
@@ -871,129 +713,6 @@
                         'Audit log bất biến — truy xuất toàn bộ lịch sử lệnh điều khiển',
                     ],
                     tech: ['MQTT / EMQX', 'OPC-UA', 'Rust', 'Go', 'InfluxDB', 'Grafana', 'Kubernetes (K3s)', 'Edge Gateway', 'WebSocket', 'TLS 1.3'],
-                },
-                etl: {
-                    type: 'Data Engineering · Cloud',
-                    name: 'Real-time ETL Pipeline',
-                    emoji: '🔄',
-                    bg: 'linear-gradient(135deg,#1a052b,#4c0c7a)',
-                    tagline: 'Hệ thống luồng dữ liệu ETL/ELT thời gian thực, xử lý hàng tỷ event mỗi ngày với kiến trúc luồng (Streaming Architecture), tối ưu chi phí lưu trữ và phân tích.',
-                    metrics: [
-                        { val: '2B+', label: 'Events xử lý/ngày' },
-                        { val: '-40%', label: 'Giảm chi phí Cloud' },
-                        { val: '<1s', label: 'Data Latency' },
-                    ],
-                    features: [
-                        'Thiết kế kiến trúc Kappa streaming xử lý thời gian thực',
-                        'Tự động scale dựa trên lưu lượng (Auto-scaling)',
-                        'Phát hiện dữ liệu lỗi và tự động sửa chữa (Self-healing data quality)',
-                        'Tích hợp đa nguồn: Relational DB, NoSQL, API, Flat files',
-                        'Mã hoá dữ liệu PII ngay tại nguồn ingestion',
-                        'Giao diện kéo thả quản lý DAG và data lineage',
-                    ],
-                    tech: ['Apache Flink', 'Apache Kafka', 'Spark Streaming', 'Airflow', 'AWS Kinesis', 'Snowflake', 'dbt', 'Python', 'Scala', 'Kubernetes'],
-                },
-                erp: {
-                    type: 'Enterprise Software',
-                    name: 'NextGen ERP & CRM',
-                    emoji: '🏢',
-                    bg: 'linear-gradient(135deg,#00142b,#003a7a)',
-                    tagline: 'Hệ thống quản trị doanh nghiệp toàn diện, thiết kế theo kiến trúc Microservices. Tích hợp AI dự báo nhu cầu và quản lý chuỗi cung ứng.',
-                    metrics: [
-                        { val: '30+', label: 'Modules tích hợp' },
-                        { val: '95%', label: 'Độ chính xác dự báo AI' },
-                        { val: '10K+', label: 'Người dùng đồng thời' },
-                    ],
-                    features: [
-                        'Kiến trúc Microservices dễ dàng mở rộng và bảo trì',
-                        'Giao diện tuỳ biến (Custom Dashboard) cho từng phòng ban',
-                        'AI dự báo doanh thu, cảnh báo tồn kho và tối ưu logistics',
-                        'Quy trình phê duyệt động (Dynamic Workflow Engine)',
-                        'Quản lý nhân sự, chấm công GPS, tính lương tự động',
-                        'Phân quyền chi tiết tới từng nút bấm (RBAC & ABAC)',
-                    ],
-                    tech: ['Spring Boot', 'Java', 'React', 'TypeScript', 'PostgreSQL', 'Redis', 'RabbitMQ', 'Docker', 'Kubernetes', 'Keycloak'],
-                },
-                wallet: {
-                    type: 'Mobile App · Security',
-                    name: 'Fintech Mobile Wallet',
-                    emoji: '💳',
-                    bg: 'linear-gradient(135deg,#052b14,#0c7a36)',
-                    tagline: 'Ứng dụng ví điện tử siêu mượt đạt chuẩn bảo mật PCI-DSS, hỗ trợ thanh toán QR code, eKYC và quản lý tài chính cá nhân.',
-                    metrics: [
-                        { val: '60fps', label: 'Hiệu năng hiển thị' },
-                        { val: 'PCI-DSS', label: 'Tiêu chuẩn bảo mật' },
-                        { val: '3s', label: 'Thời gian eKYC' },
-                    ],
-                    features: [
-                        'eKYC tự động: OCR CMND/CCCD, liveness detection, face matching',
-                        'Thanh toán EMVCo QR, Napas247, và mã vạch nội bộ',
-                        'Phân tích chi tiêu cá nhân bằng AI (Personal Finance Management)',
-                        'Kiến trúc Offline-first: Lưu trữ an toàn và đồng bộ khi có mạng',
-                        'Hệ thống Loyalty: Tích điểm, đổi voucher, gamification',
-                        'Bảo mật 3 lớp: Sinh trắc học, PIN, OTP/Smart OTP',
-                    ],
-                    tech: ['React Native', 'Expo', 'Zustand', 'NestJS', 'PostgreSQL', 'Redis', 'Firebase', 'Socket.io', 'AWS KMS'],
-                },
-                smartlight: {
-                    type: 'IoT · Smart City',
-                    name: 'SmartLight Platform',
-                    emoji: '💡',
-                    bg: 'linear-gradient(135deg,#2b2a0a,#605f0f)',
-                    tagline: 'Hệ thống quản lý chiếu sáng thông minh quy mô thành phố. Tích hợp bản đồ GIS, điều khiển hàng chục nghìn điểm sáng theo thời gian thực giúp tiết kiệm 40% năng lượng.',
-                    metrics: [
-                        { val: '40%', label: 'Tiết kiệm điện năng' },
-                        { val: '50K+', label: 'Điểm sáng quản lý' },
-                        { val: '<50ms', label: 'Độ trễ điều khiển' },
-                    ],
-                    features: [
-                        'Bản đồ số GIS thời gian thực theo dõi trạng thái từng bóng đèn',
-                        'Lập lịch chiếu sáng tự động theo thiên văn và cường độ sáng',
-                        'Tự động phát hiện và cảnh báo bóng hỏng, mất kết nối',
-                        'Điều khiển theo nhóm (Group) hoặc cá nhân (Node)',
-                        'Tích hợp chuẩn giao tiếp LoraWAN và NB-IoT',
-                    ],
-                    tech: ['Java', 'Spring Boot', 'Vue.js', 'PostgreSQL', 'TimescaleDB', 'MQTT', 'Redis', 'Docker', 'AWS'],
-                },
-                edtech: {
-                    type: 'EdTech · Platform',
-                    name: 'EduCore LMS',
-                    emoji: '🎓',
-                    bg: 'linear-gradient(135deg,#0a1a2b,#0f2f60)',
-                    tagline: 'Nền tảng EdTech quản lý trung tâm giáo dục toàn diện. Tích hợp AI chấm điểm phát âm, quản lý học viên, xếp lịch học và bài giảng tương tác.',
-                    metrics: [
-                        { val: '100K+', label: 'Học viên active' },
-                        { val: '98%', label: 'Độ chuẩn xác AI' },
-                        { val: '30+', label: 'Trung tâm triển khai' },
-                    ],
-                    features: [
-                        'Chấm điểm phát âm bằng AI (Speech-to-text) theo chuẩn IPA',
-                        'Quản lý lớp học và điểm danh bằng mã QR/FaceID',
-                        'CRM theo dõi phễu tuyển sinh và chăm sóc học viên',
-                        'Hệ thống bài tập về nhà theo hướng Gamification',
-                        'Hệ thống E-Learning và bài giảng tương tác hai chiều',
-                    ],
-                    tech: ['Node.js', 'NestJS', 'React', 'React Native', 'PostgreSQL', 'MongoDB', 'WebRTC', 'AWS Transcribe', 'TensorFlow'],
-                },
-                camera: {
-                    type: 'Computer Vision · AI',
-                    name: 'Vision AI Engine',
-                    emoji: '📹',
-                    bg: 'linear-gradient(135deg,#2b0a2a,#600f5f)',
-                    tagline: 'Hệ thống phân tích Video/Camera ứng dụng Computer Vision. Tự động nhận diện khuôn mặt, đếm lưu lượng phương tiện và cảnh báo an ninh thời gian thực.',
-                    metrics: [
-                        { val: '99.5%', label: 'Độ chính xác nhận diện' },
-                        { val: '10K+', label: 'Luồng Camera' },
-                        { val: '24/7', label: 'Phân tích tự động' },
-                    ],
-                    features: [
-                        'Nhận diện khuôn mặt (Face Recognition) & cảnh báo danh sách đen',
-                        'Đếm phương tiện và phân tích mật độ giao thông thông minh',
-                        'Nhận diện hành vi bất thường (đánh nhau, ngã, xâm nhập)',
-                        'Tích hợp chuẩn ONVIF/RTSP tương thích mọi loại IP Camera',
-                        'Xử lý trực tiếp tại Edge (Edge Computing) để giảm tải băng thông',
-                    ],
-                    tech: ['C++', 'Python', 'NVIDIA DeepStream', 'OpenCV', 'TensorRT', 'YOLO', 'React', 'Go', 'Kubernetes'],
                 },
             };
 
