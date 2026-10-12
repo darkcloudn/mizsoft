@@ -233,8 +233,9 @@
         }
 
         .hero-title .line {
-            overflow: hidden;
+            overflow: visible;
             display: block;
+            padding: 2px 0;
         }
 
         .hero-title .word {

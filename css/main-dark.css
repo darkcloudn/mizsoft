@@ -243,7 +243,7 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 180px 48px 100px;
+    padding: 130px 48px 60px;
     position: relative;
 }
 
@@ -263,7 +263,7 @@ nav {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--c-cyan);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     padding: 8px 20px;
     border: 1px solid rgba(0,242,254,0.2);
     border-radius: 100px;
@@ -280,11 +280,11 @@ nav {
 
 .hero-title {
     font-family: var(--f-display);
-    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-size: clamp(2.8rem, 5.2vw, 5.2rem);
     font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    margin-bottom: 40px;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    margin-bottom: 28px;
     color: var(--c-ink);
 }
 
@@ -299,16 +299,16 @@ nav {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-top: 60px;
+    margin-top: 36px;
     border-top: 1px solid var(--c-line);
-    padding-top: 40px;
+    padding-top: 28px;
 }
 
 .hero-desc {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     line-height: 1.6;
     color: var(--c-muted);
-    max-width: 540px;
+    max-width: 560px;
     font-weight: 400;
 }
 
@@ -454,6 +454,70 @@ nav {
 .bento-card p {
     color: var(--c-muted);
     font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.bento-card-media {
+    margin-top: 28px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #000;
+    height: 240px;
+}
+
+.bento-large .bento-card-media {
+    height: 280px;
+}
+
+.bento-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover .bento-card-media img {
+    transform: scale(1.05);
+}
+
+.bento-card-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(3, 3, 5, 0.85) 100%);
+    pointer-events: none;
+}
+
+.bento-media-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    z-index: 2;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: rgba(3, 3, 5, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 242, 254, 0.35);
+    color: var(--c-cyan);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bento-media-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--c-cyan);
+    box-shadow: 0 0 8px var(--c-cyan);
 }
 
 /* ─── WORK / PROJECTS ─────────────────────────── */
@@ -468,57 +532,97 @@ nav {
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--c-line);
-    border-radius: 40px;
+    border-radius: 36px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.5s var(--ease-expo);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .work-card:hover {
-    transform: translateY(-12px);
-    border-color: rgba(255,255,255,0.2);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transform: translateY(-10px);
+    border-color: rgba(255,255,255,0.22);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 30px rgba(0, 242, 254, 0.08);
 }
 
 .work-card-visual {
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 8rem;
-    background: rgba(0,0,0,0.3);
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+    background: #080911;
     border-bottom: 1px solid var(--c-line);
-    transition: filter 0.5s;
+    display: block;
 }
 
-.work-card:hover .work-card-visual {
-    filter: brightness(1.2) contrast(1.1);
+.work-card-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s;
+}
+
+.work-card:hover .work-card-visual img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.work-card-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 40%, rgba(3, 3, 5, 0.75) 100%);
+    pointer-events: none;
+}
+
+.work-card-badge {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 2;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: rgba(3, 3, 5, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--c-ink);
 }
 
 .work-card-body {
-    padding: 48px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .work-card-type {
     font-size: 0.85rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--c-muted);
-    margin-bottom: 16px;
-    font-weight: 700;
-}
-
-.work-card:hover .work-card-type {
     color: var(--c-cyan);
+    margin-bottom: 12px;
+    font-weight: 700;
 }
 
 .work-card-name {
     font-family: var(--f-display);
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.work-card-desc {
+    color: var(--c-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 /* ─── PHILOSOPHY ────────────────────────────────── */
@@ -762,4 +866,144 @@ nav {
 [data-theme="light"] .btn-white {
     background: var(--c-ink);
     color: #ffffff;
+}
+
+/* ─── MODAL PREMIUM DARK STYLING ─── */
+.proj-modal {
+    background: #080911;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.8);
+}
+
+.proj-modal-close {
+    background: rgba(3, 3, 5, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--c-ink);
+    z-index: 10;
+}
+
+.proj-modal-close:hover {
+    background: var(--c-cyan);
+    color: #000;
+    border-color: var(--c-cyan);
+}
+
+.proj-modal-visual {
+    height: 320px;
+    background: #030305;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.proj-modal-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.proj-modal-visual::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, #080911);
+    pointer-events: none;
+}
+
+.proj-modal-img-badge {
+    position: absolute;
+    top: 24px;
+    left: 28px;
+    z-index: 2;
+    background: rgba(3, 3, 5, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 242, 254, 0.4);
+    color: var(--c-cyan);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.proj-modal-img-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--c-cyan);
+    box-shadow: 0 0 8px var(--c-cyan);
+}
+
+.proj-modal-body {
+    background: #080911;
+    color: var(--c-ink);
+}
+
+.proj-modal-type {
+    color: var(--c-cyan);
+    font-weight: 700;
+}
+
+.proj-modal-name {
+    color: var(--c-ink);
+}
+
+.proj-modal-tagline {
+    color: var(--c-muted);
+    border-bottom: 1px solid var(--c-line);
+}
+
+.proj-modal-section-title {
+    color: var(--c-muted);
+    font-weight: 700;
+}
+
+.proj-metrics {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--c-line);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.proj-metric {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 20px;
+}
+
+.proj-metric-val {
+    font-family: var(--f-display);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--c-cyan);
+}
+
+.proj-metric-label {
+    font-size: 0.8rem;
+    color: var(--c-muted);
+}
+
+.proj-features li {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.proj-tech-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--c-line);
+    color: var(--c-ink);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
 }

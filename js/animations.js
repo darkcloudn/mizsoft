@@ -16,41 +16,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     // 1. Hiệu ứng mở đầu (Hero Section)
-    const heroTimeline = gsap.timeline({ defaults: { ease: "power4.out" } });
+    const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    // Cực quang phía sau nở dần ra
-    heroTimeline.fromTo(".hero-bg-text", 
-        { scale: 0.8, opacity: 0 }, 
-        { scale: 1, opacity: 0.15, duration: 2.5, ease: "power2.out" }
+    // Huy hiệu và các thẻ capsule
+    heroTimeline.fromTo(".hero-eyebrow-wrap",
+        { y: -20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6 }
     )
-    // Các dải glow sáng lên
-    .fromTo(".ambient-glow .glow-1, .ambient-glow .glow-2, .ambient-glow .glow-3",
-        { scale: 0, opacity: 0 },
-        { scale: 1, opacity: 0.8, duration: 2, stagger: 0.2 },
-        "-=2"
+    // Tiêu đề chính hiện lên theo từng dòng dứt khoát
+    .fromTo(".hero-title .line",
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.6, stagger: 0.08 },
+        "-=0.3"
     )
-    // Huy hiệu Tokyo x Vietnam rơi xuống nhẹ nhàng
-    .fromTo(".hero-badge",
-        { y: -30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1 },
-        "-=1.5"
-    )
-    // Tiêu đề chính hiện lên theo từng dòng
-    .fromTo(".hero-title, .hero-title span",
-        { y: 40, opacity: 0, rotationX: -20 },
-        { y: 0, opacity: 1, rotationX: 0, duration: 1.2, stagger: 0.1, transformOrigin: "0% 50% -50" },
-        "-=1.2"
-    )
-    // Chữ mô tả và các nút fade in lên
+    // Chữ mô tả
     .fromTo(".hero-desc",
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1 },
-        "-=0.8"
+        { y: 15, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5 },
+        "-=0.3"
     )
-    .fromTo(".hero-cta",
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1 },
-        "-=0.6"
+    // Các nút CTA
+    .fromTo(".hero-actions",
+        { y: 15, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.5 },
+        "-=0.3"
     );
 
     // 2. Hiệu ứng cuộn cho Bento Grid (Dịch vụ)

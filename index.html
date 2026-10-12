@@ -57,10 +57,18 @@
     <!-- ─── HERO ─────────────────────────────────────── -->
     <section class="hero" id="home">
         <div class="hero-inner">
-            <p class="hero-eyebrow">
-                <span class="hero-eyebrow-dot"></span>
-                <span data-i18n="hero.eyebrow">Studio phần mềm · Tokyo &amp; Vietnam</span>
-            </p>
+            <div class="hero-eyebrow-wrap" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:24px;">
+                <p class="hero-eyebrow" style="margin-bottom:0;">
+                    <span class="hero-eyebrow-dot"></span>
+                    <span data-i18n="hero.eyebrow">Studio phần mềm · Tokyo &amp; Vietnam</span>
+                </p>
+                <div class="hero-capsules" style="display:inline-flex;flex-wrap:wrap;gap:8px;">
+                    <span class="tag" style="background:rgba(0,242,254,0.08);border-color:rgba(0,242,254,0.3);color:var(--c-cyan);">Camera AI Biên</span>
+                    <span class="tag" style="background:rgba(255,255,255,0.04);">Bo Mạch KiCad</span>
+                    <span class="tag" style="background:rgba(255,255,255,0.04);">SmartFarm IoT</span>
+                    <span class="tag" style="background:rgba(255,255,255,0.04);">ERP Doanh Nghiệp</span>
+                </div>
+            </div>
 
             <h1 class="hero-title" id="heroTitle">
                 <span class="line"><span class="word" data-i18n="hero.line1">Chúng tôi</span></span>
@@ -136,6 +144,10 @@
                         <span class="tag">Real-time YOLO</span>
                     </div>
                     <p data-i18n="services.s1.desc">Phân tích hình ảnh &amp; video thông minh thời gian thực tại biên. Nhận diện vật thể, giám sát dây chuyền sản xuất và an ninh với độ trễ dưới 20ms.</p>
+                    <div class="bento-card-media">
+                        <img src="assets/images/projects/camera_ai_edge.png" alt="Camera AI Edge Vision" loading="lazy" />
+                        <div class="bento-media-badge">Edge NPU · YOLOv8 60 FPS</div>
+                    </div>
                 </div>
                 <div class="bento-card reveal" data-service="pcb" style="cursor:pointer;">
                     <span class="service-num">02</span>
@@ -146,6 +158,10 @@
                         <span class="tag">STM32 / ESP32</span>
                     </div>
                     <p data-i18n="services.s2.desc">Thiết kế mạch in vi sai đa lớp chuẩn công nghiệp, tối ưu toàn vẹn tín hiệu SI/PI, firmware nhúng và tạo mẫu thử nghiệm nhanh.</p>
+                    <div class="bento-card-media">
+                        <img src="assets/images/projects/pcb_kicad_board.png" alt="KiCad Hardware R&D" loading="lazy" />
+                        <div class="bento-media-badge">KiCad 6-Layer · ENIG Gold</div>
+                    </div>
                 </div>
                 <div class="bento-card reveal" data-service="iot" style="cursor:pointer;">
                     <span class="service-num">03</span>
@@ -156,6 +172,10 @@
                         <span class="tag">SmartFarm / Light</span>
                     </div>
                     <p data-i18n="services.s3.desc">Hạ tầng kết nối phần cứng vạn vật viễn trắc, trạm quan trắc nông nghiệp tự động SmartFarm và điều khiển chiếu sáng công nghiệp SmartLight.</p>
+                    <div class="bento-card-media">
+                        <img src="assets/images/projects/smartfarm_iot_station.png" alt="SmartFarm IoT Platform" loading="lazy" />
+                        <div class="bento-media-badge">LoRaWAN IP67 · Solar Agri</div>
+                    </div>
                 </div>
                 <div class="bento-card bento-large reveal" data-service="erp" style="cursor:pointer;">
                     <span class="service-num">04</span>
@@ -166,6 +186,10 @@
                         <span class="tag">High Concurrency</span>
                     </div>
                     <p data-i18n="services.s4.desc">Xây dựng hệ sinh thái phần mềm quản trị doanh nghiệp toàn diện: quản trị kho vận, chuỗi cung ứng và tự động hóa quy trình nghiệp vụ chuyên sâu.</p>
+                    <div class="bento-card-media">
+                        <img src="assets/images/projects/erp_enterprise_core.png" alt="Enterprise ERP & AI Agents" loading="lazy" />
+                        <div class="bento-media-badge">Clean Architecture · Multi-Agent</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -184,8 +208,9 @@
 
             <div class="work-grid">
                 <div class="work-card reveal" data-project="camera-ai" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#2b0a2a,#600f5f);">
-                        <span style="font-size:5rem;">📹</span>
+                    <div class="work-card-visual">
+                        <img src="assets/images/projects/camera_ai_edge.png" alt="Vision AI Engine" loading="lazy" />
+                        <span class="work-card-badge">YOLO Edge · &lt;20ms</span>
                     </div>
                     <div class="work-card-body">
                         <p class="work-card-type">Computer Vision · Edge AI</p>
@@ -195,8 +220,9 @@
                 </div>
 
                 <div class="work-card reveal" data-project="pcb" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#1f2937,#111827);">
-                        <span style="font-size:5rem;">⚡</span>
+                    <div class="work-card-visual">
+                        <img src="assets/images/projects/pcb_kicad_board.png" alt="Industrial PCB Node" loading="lazy" />
+                        <span class="work-card-badge">KiCad 6-Layer · STM32</span>
                     </div>
                     <div class="work-card-body">
                         <p class="work-card-type">Hardware R&amp;D · KiCad EDA</p>
@@ -206,8 +232,9 @@
                 </div>
 
                 <div class="work-card reveal" data-project="smartfarm" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#0e2a1f,#1f5a41);">
-                        <span style="font-size:5rem;">🌱</span>
+                    <div class="work-card-visual">
+                        <img src="assets/images/projects/smartfarm_iot_station.png" alt="SmartFarm IoT Platform" loading="lazy" />
+                        <span class="work-card-badge">LoRaWAN · Solar IP67</span>
                     </div>
                     <div class="work-card-body">
                         <p class="work-card-type">Smart Agriculture · IoT</p>
@@ -217,8 +244,9 @@
                 </div>
 
                 <div class="work-card reveal" data-project="smartlight" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#2b2a0a,#605f0f);">
-                        <span style="font-size:5rem;">💡</span>
+                    <div class="work-card-visual">
+                        <img src="assets/images/projects/smartlight_gis.png" alt="SmartLight Infrastructure" loading="lazy" />
+                        <span class="work-card-badge">City GIS · -64% kWh</span>
                     </div>
                     <div class="work-card-body">
                         <p class="work-card-type">Smart City · Automation</p>
@@ -228,8 +256,9 @@
                 </div>
 
                 <div class="work-card reveal" data-project="erp" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#00142b,#003a7a);">
-                        <span style="font-size:5rem;">🏢</span>
+                    <div class="work-card-visual">
+                        <img src="assets/images/projects/erp_enterprise_core.png" alt="NextGen Enterprise ERP" loading="lazy" />
+                        <span class="work-card-badge">NextGen ERP · WMS FIFO</span>
                     </div>
                     <div class="work-card-body">
                         <p class="work-card-type">Enterprise Software</p>
@@ -239,8 +268,9 @@
                 </div>
 
                 <div class="work-card reveal" data-project="ai-agent" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#0a0a14,#0d1a4a);">
-                        <span style="font-size:5rem;">🤖</span>
+                    <div class="work-card-visual">
+                        <img src="assets/images/projects/ai_agents_system.png" alt="Enterprise AI Agent Systems" loading="lazy" />
+                        <span class="work-card-badge">Multi-Agent · HITL</span>
                     </div>
                     <div class="work-card-body">
                         <p class="work-card-type">AI Agents · Enterprise</p>
@@ -250,8 +280,9 @@
                 </div>
 
                 <div class="work-card reveal" data-project="data" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#14000a,#4a0020);">
-                        <span style="font-size:5rem;">📊</span>
+                    <div class="work-card-visual">
+                        <img src="assets/images/projects/enterprise_data_hub.png" alt="Enterprise Data Hub" loading="lazy" />
+                        <span class="work-card-badge">85 GB/s Lake · Kafka</span>
                     </div>
                     <div class="work-card-body">
                         <p class="work-card-type">Data · Analytics</p>
@@ -261,8 +292,9 @@
                 </div>
 
                 <div class="work-card reveal" data-project="iot" style="cursor:pointer;">
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#091414,#00404a);">
-                        <span style="font-size:5rem;">🔌</span>
+                    <div class="work-card-visual">
+                        <img src="assets/images/projects/smart_factory_core.png" alt="Smart Factory Core" loading="lazy" />
+                        <span class="work-card-badge">Industry 4.0 · SCADA</span>
                     </div>
                     <div class="work-card-body">
                         <p class="work-card-type">IoT · Industrial Automation</p>
@@ -272,9 +304,9 @@
                 </div>
 
                 <a class="work-card reveal" href="demo/farm-organic-iot/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;position:relative;">
-                    <span style="position:absolute;top:14px;right:14px;z-index:2;font:700 11px/1 Inter,sans-serif;letter-spacing:.04em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);color:#fff;">DEMO LIVE →</span>
-                    <div class="work-card-visual" style="background: linear-gradient(135deg,#1f3d1a,#2f5d3a);">
-                        <span style="font-size:5rem;">🌱</span>
+                    <span style="position:absolute;top:18px;right:18px;z-index:2;font:700 11px/1 Inter,sans-serif;letter-spacing:.04em;padding:6px 14px;border-radius:999px;background:rgba(0,242,254,.15);border:1px solid rgba(0,242,254,.4);backdrop-filter:blur(8px);color:var(--c-cyan);">LIVE DEMO →</span>
+                    <div class="work-card-visual">
+                        <img src="assets/images/projects/smartfarm_iot_station.png" alt="Farm Organic IoT Dashboard" loading="lazy" />
                     </div>
                     <div class="work-card-body">
                         <p class="work-card-type">UI/UX Design · IoT Dashboard</p>
@@ -880,8 +912,23 @@
                 const titleFeatures = dict['modal.features'] || 'Tính năng & khả năng';
                 const titleTech = dict['modal.tech'] || 'Công nghệ sử dụng';
 
-                visual.style.background = s.bg;
-                visual.innerHTML = `<span style="font-size:5rem;position:relative;z-index:1;">${s.emoji}</span>`;
+                const ASSET_MAP = {
+                    'camera-ai': { img: 'assets/images/projects/camera_ai_edge.png', badge: 'Edge AI · YOLOv8 60 FPS' },
+                    'pcb': { img: 'assets/images/projects/pcb_kicad_board.png', badge: 'KiCad 6-Layer · STM32 LoRa' },
+                    'smartfarm': { img: 'assets/images/projects/smartfarm_iot_station.png', badge: 'LoRaWAN IP67 · Solar Agri' },
+                    'iot': { img: 'assets/images/projects/smartfarm_iot_station.png', badge: 'IoT Telemetry · Smart Control' },
+                    'smartlight': { img: 'assets/images/projects/smartlight_gis.png', badge: 'Smart City GIS · -64% kWh' },
+                    'erp': { img: 'assets/images/projects/erp_enterprise_core.png', badge: 'NextGen ERP · WMS FIFO' },
+                    'ai-agent': { img: 'assets/images/projects/ai_agents_system.png', badge: 'Multi-Agent AI · HITL' },
+                    'data': { img: 'assets/images/projects/enterprise_data_hub.png', badge: 'Big Data Lake · Kafka' },
+                };
+
+                const meta = ASSET_MAP[key] || { img: 'assets/images/projects/camera_ai_edge.png', badge: 'Enterprise Solution' };
+                visual.style.background = '#030305';
+                visual.innerHTML = `
+                    <img src="${meta.img}" alt="${s.name}" class="proj-modal-img" />
+                    <div class="proj-modal-img-badge">${meta.badge}</div>
+                `;
 
                 body.innerHTML = `
                 <p class="proj-modal-type">${s.type}</p>
@@ -1314,8 +1361,23 @@
                 const titleFeatures = dict['modal.features'] || 'Tính năng & khả năng';
                 const titleTech = dict['modal.tech'] || 'Công nghệ sử dụng';
 
-                visual.style.background = p.bg;
-                visual.innerHTML = `<span style="font-size:5rem;position:relative;z-index:1;">${p.emoji}</span>`;
+                const ASSET_MAP = {
+                    'camera-ai': { img: 'assets/images/projects/camera_ai_edge.png', badge: 'YOLO Edge · <20ms' },
+                    'pcb': { img: 'assets/images/projects/pcb_kicad_board.png', badge: 'KiCad 6-Layer · STM32' },
+                    'smartfarm': { img: 'assets/images/projects/smartfarm_iot_station.png', badge: 'LoRaWAN · Solar IP67' },
+                    'smartlight': { img: 'assets/images/projects/smartlight_gis.png', badge: 'City GIS · -64% kWh' },
+                    'erp': { img: 'assets/images/projects/erp_enterprise_core.png', badge: 'NextGen ERP · WMS FIFO' },
+                    'ai-agent': { img: 'assets/images/projects/ai_agents_system.png', badge: 'Multi-Agent · HITL' },
+                    'data': { img: 'assets/images/projects/enterprise_data_hub.png', badge: '85 GB/s Lake · Kafka' },
+                    'iot': { img: 'assets/images/projects/smart_factory_core.png', badge: 'Industry 4.0 · SCADA' },
+                };
+
+                const meta = ASSET_MAP[key] || { img: 'assets/images/projects/camera_ai_edge.png', badge: 'Production System' };
+                visual.style.background = '#030305';
+                visual.innerHTML = `
+                    <img src="${meta.img}" alt="${p.name}" class="proj-modal-img" />
+                    <div class="proj-modal-img-badge">${meta.badge}</div>
+                `;
 
                 body.innerHTML = `
                 <p class="proj-modal-type">${p.type}</p>
