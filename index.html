@@ -517,98 +517,356 @@
     <script>
         (() => {
             const SERVICES = {
-                'camera-ai': {
-                    type: 'Computer Vision · Edge AI · Industrial',
-                    name: 'Camera AI & Thị Giác Máy Tính',
-                    emoji: '📹',
-                    bg: 'linear-gradient(135deg,#2b0a2a,#600f5f)',
-                    tagline: 'Hệ thống thị giác máy tính và phân tích video AI thời gian thực tại biên. Nhận diện khuôn mặt, đếm lưu lượng, phát hiện dị thường và tự động hóa giám sát an ninh với độ trễ dưới 20ms.',
-                    metrics: [
-                        { val: '<20ms', label: 'Độ trễ phân tích biên' },
-                        { val: '99.5%', label: 'Độ chính xác mô hình' },
-                        { val: '64+', label: 'Luồng camera đồng thời' },
-                    ],
-                    features: [
-                        'Xử lý trực tiếp trên phần cứng Edge NPU (RK3588, Jetson), giảm 90% chi phí truyền băng thông',
-                        'Mô hình Computer Vision tùy chỉnh: YOLO, OCR biển số xe, nhận diện khuôn mặt, cảnh báo PPE',
-                        'Phát hiện hành vi dị thường: xâm nhập vùng cấm, té ngã, cháy nổ, đồ vật bỏ quên',
-                        'Tương thích chuẩn công nghiệp ONVIF, RTSP, WebRTC với mọi dòng camera IP hiện có',
-                        'Hệ thống quản lý cảnh báo thời gian thực tích hợp Webhook, Telegram, SMS',
-                        'Bảo mật chuẩn mã hóa luồng video RTSP qua TLS, tuân thủ an toàn dữ liệu doanh nghiệp',
-                    ],
-                    tech: ['C++', 'Python', 'YOLOv10', 'NVIDIA TensorRT', 'OpenCV', 'RK3588 NPU', 'WebRTC', 'Go', 'Docker'],
+                vi: {
+                    'camera-ai': {
+                        type: 'Computer Vision · Edge AI · Industrial',
+                        name: 'Camera AI & Thị Giác Máy Tính',
+                        emoji: '📹',
+                        bg: 'linear-gradient(135deg,#2b0a2a,#600f5f)',
+                        tagline: 'Hệ thống thị giác máy tính và phân tích video AI thời gian thực tại biên. Nhận diện khuôn mặt, đếm lưu lượng, phát hiện dị thường và tự động hóa giám sát an ninh với độ trễ dưới 20ms.',
+                        metrics: [
+                            { val: '<20ms', label: 'Độ trễ phân tích biên' },
+                            { val: '99.5%', label: 'Độ chính xác mô hình' },
+                            { val: '64+', label: 'Luồng camera đồng thời' },
+                        ],
+                        features: [
+                            'Xử lý trực tiếp trên phần cứng Edge NPU (RK3588, Jetson), giảm 90% chi phí truyền băng thông',
+                            'Mô hình Computer Vision tùy chỉnh: YOLO, OCR biển số xe, nhận diện khuôn mặt, cảnh báo PPE',
+                            'Phát hiện hành vi dị thường: xâm nhập vùng cấm, té ngã, cháy nổ, đồ vật bỏ quên',
+                            'Tương thích chuẩn công nghiệp ONVIF, RTSP, WebRTC với mọi dòng camera IP hiện có',
+                            'Hệ thống quản lý cảnh báo thời gian thực tích hợp Webhook, Telegram, SMS',
+                            'Bảo mật chuẩn mã hóa luồng video RTSP qua TLS, tuân thủ an toàn dữ liệu doanh nghiệp',
+                        ],
+                        tech: ['C++', 'Python', 'YOLOv10', 'NVIDIA TensorRT', 'OpenCV', 'RK3588 NPU', 'WebRTC', 'Go', 'Docker'],
+                    },
+                    pcb: {
+                        type: 'Hardware R&D · KiCad EDA · Firmware',
+                        name: 'R&D Phần Cứng & Thiết Kế Bo Mạch PCB',
+                        emoji: '⚡',
+                        bg: 'linear-gradient(135deg,#1f2937,#111827)',
+                        tagline: 'Dịch vụ thiết kế bo mạch điện tử vi sai chuẩn công nghiệp từ nguyên lý Schematic đến layout PCB đa lớp. Tích hợp vi điều khiển STM32, ESP32 và phát triển firmware nhúng thời gian thực độ tin cậy cao.',
+                        metrics: [
+                            { val: '4 - 8', label: 'Số lớp mạch vi sai' },
+                            { val: 'IPC-610', label: 'Chuẩn lắp ráp PCBA' },
+                            { val: '<15uA', label: 'Tiêu thụ Deep Sleep' },
+                        ],
+                        features: [
+                            'Thiết kế sơ đồ nguyên lý và layout PCB bằng KiCad EDA chuẩn công nghiệp',
+                            'Tính toán kiểm soát trở kháng (Impedance control), đường truyền vi sai cho tín hiệu cao tần RF',
+                            'Tích hợp vi điều khiển thế hệ mới: STM32WLE5 (LoRa tích hợp), ESP32-S3, Nordic nRF',
+                            'Bảo vệ công nghiệp: Chống tĩnh điện ESD, sốc điện áp TVS, cách ly quang học Optocoupler',
+                            'Phát triển firmware nhúng trần (Bare-metal C) và hệ điều hành thời gian thực FreeRTOS',
+                            'Hỗ trợ chế tạo mẫu thử nghiệm nhanh (Rapid Prototyping) và chuyển giao sản xuất hàng loạt',
+                        ],
+                        tech: ['KiCad EDA', 'STM32CubeIDE', 'FreeRTOS', 'Bare-metal C/C++', 'STM32WLE5', 'ESP32-S3', 'LoRaWAN', 'Modbus RS485'],
+                    },
+                    iot: {
+                        type: 'IoT · SmartFarm · Industrial Telemetry',
+                        name: 'Hệ Thống IoT & SmartFarm / SmartLight',
+                        emoji: '🌱',
+                        bg: 'linear-gradient(135deg,#0e2a1f,#1f5a41)',
+                        tagline: 'Hạ tầng kết nối thiết bị IoT và nền tảng điều khiển viễn trắc thông minh. Tích hợp giải pháp quan trắc nông nghiệp số SmartFarm và mạng lưới chiếu sáng công nghiệp tầm xa SmartLight.',
+                        metrics: [
+                            { val: '100K+', label: 'Messages / giây' },
+                            { val: '99.99%', label: 'Uptime hệ thống' },
+                            { val: '10km', label: 'Phủ sóng không dây LoRa' },
+                        ],
+                        features: [
+                            'Hạ tầng MQTT Broker phân tán chịu tải cao, đảm bảo không thất thoát dữ liệu viễn trắc',
+                            'Trạm cảm biến quan trắc nông nghiệp SmartFarm: độ ẩm, dinh dưỡng đất NPK, pH, EC qua LoRaWAN',
+                            'Tự động hóa chu trình tưới tiêu chính xác và hệ thống châm phân dinh dưỡng đa kênh',
+                            'Hệ thống quản lý chiếu sáng công nghiệp SmartLight tích hợp bản đồ số GIS thời gian thực',
+                            'Thuật toán dimming tiết kiệm điện năng thông minh theo lịch trình thiên văn',
+                            'Kiến trúc Edge Computing cho phép các trạm cơ sở tự hoạt động ngay cả khi ngắt kết nối Internet',
+                        ],
+                        tech: ['LoRaWAN', 'MQTT Broker', 'ThingsBoard', 'TimescaleDB', 'PostgreSQL / PostGIS', 'FreeRTOS', 'Docker', 'Grafana'],
+                    },
+                    erp: {
+                        type: 'Enterprise ERP · Clean Architecture · AI Agents',
+                        name: 'Hệ Thống ERP & Phần Mềm Doanh Nghiệp',
+                        emoji: '🏢',
+                        bg: 'linear-gradient(135deg,#00142b,#003a7a)',
+                        tagline: 'Hệ thống quản trị nguồn lực doanh nghiệp toàn diện thiết kế theo kiến trúc Clean Architecture bền vững. Tích hợp giải pháp AI Agents tự động hóa quy trình nghiệp vụ và đối soát dữ liệu liên phòng ban.',
+                        metrics: [
+                            { val: '10K+', label: 'Người dùng đồng thời' },
+                            { val: '0%', label: 'Sai lệch số liệu kho' },
+                            { val: '99.99%', label: 'SLA Sẵn sàng' },
+                        ],
+                        features: [
+                            'Kiến trúc phần mềm Clean Architecture & DDD, dễ dàng kiểm thử, bảo trì và mở rộng lâu dài',
+                            'Quản lý kho vận chuẩn xác theo vị trí kệ, lô hàng, mã vạch/QR và phương pháp FIFO',
+                            'Quản lý quy trình mua bán hàng, hợp đồng, công nợ và chuỗi cung ứng đa chi nhánh',
+                            'Hệ thống AI Agents tự động đọc hiểu văn bản, hóa đơn, hồ sơ và trích xuất dữ liệu tự động',
+                            'Workflow phê duyệt động đa cấp độ, linh hoạt theo cơ cấu tổ chức doanh nghiệp',
+                            'Bảo mật phân quyền chi tiết (RBAC) đến từng hành động và từng trường dữ liệu nhạy cảm',
+                        ],
+                        tech: ['Clean Architecture', 'Golang', 'NestJS / TypeScript', 'PostgreSQL', 'Redis', 'Kafka', 'React', 'Docker', 'Kubernetes'],
+                    },
                 },
-
-                pcb: {
-                    type: 'Hardware R&D · KiCad EDA · Firmware',
-                    name: 'R&D Phần Cứng & Thiết Kế Bo Mạch PCB',
-                    emoji: '⚡',
-                    bg: 'linear-gradient(135deg,#1f2937,#111827)',
-                    tagline: 'Dịch vụ thiết kế bo mạch điện tử vi sai chuẩn công nghiệp từ nguyên lý Schematic đến layout PCB đa lớp. Tích hợp vi điều khiển STM32, ESP32 và phát triển firmware nhúng thời gian thực độ tin cậy cao.',
-                    metrics: [
-                        { val: '4 - 8', label: 'Số lớp mạch vi sai' },
-                        { val: 'IPC-610', label: 'Chuẩn lắp ráp PCBA' },
-                        { val: '<15uA', label: 'Tiêu thụ Deep Sleep' },
-                    ],
-                    features: [
-                        'Thiết kế sơ đồ nguyên lý và layout PCB bằng KiCad EDA chuẩn công nghiệp',
-                        'Tính toán kiểm soát trở kháng (Impedance control), đường truyền vi sai cho tín hiệu cao tần RF',
-                        'Tích hợp vi điều khiển thế hệ mới: STM32WLE5 (LoRa tích hợp), ESP32-S3, Nordic nRF',
-                        'Bảo vệ công nghiệp: Chống tĩnh điện ESD, sốc điện áp TVS, cách ly quang học Optocoupler',
-                        'Phát triển firmware nhúng trần (Bare-metal C) và hệ điều hành thời gian thực FreeRTOS',
-                        'Hỗ trợ chế tạo mẫu thử nghiệm nhanh (Rapid Prototyping) và chuyển giao sản xuất hàng loạt',
-                    ],
-                    tech: ['KiCad EDA', 'STM32CubeIDE', 'FreeRTOS', 'Bare-metal C/C++', 'STM32WLE5', 'ESP32-S3', 'LoRaWAN', 'Modbus RS485'],
+                en: {
+                    'camera-ai': {
+                        type: 'Computer Vision · Edge AI · Industrial',
+                        name: 'Camera AI & Computer Vision',
+                        emoji: '📹',
+                        bg: 'linear-gradient(135deg,#2b0a2a,#600f5f)',
+                        tagline: 'Real-time intelligent image & video analytics at the edge. Object detection, production line inspection, and security alerts with sub-20ms latency.',
+                        metrics: [
+                            { val: '<20ms', label: 'Edge Inference Latency' },
+                            { val: '99.5%', label: 'Detection Accuracy' },
+                            { val: '64+', label: 'Concurrent Streams' },
+                        ],
+                        features: [
+                            'Direct on-device Edge NPU processing (RK3588, Jetson), slashing network bandwidth costs by 90%',
+                            'Custom Computer Vision models: YOLO, license plate OCR, facial recognition, PPE compliance',
+                            'Anomaly behavior detection: perimeter intrusion, fall detection, fire/smoke, unattended items',
+                            'Industrial protocol support: ONVIF, RTSP, WebRTC compatible with existing IP cameras',
+                            'Real-time incident alert engine integrated with Webhook, Telegram, and SMS',
+                            'Enterprise TLS encrypted RTSP video streaming compliant with corporate privacy standards',
+                        ],
+                        tech: ['C++', 'Python', 'YOLOv10', 'NVIDIA TensorRT', 'OpenCV', 'RK3588 NPU', 'WebRTC', 'Go', 'Docker'],
+                    },
+                    pcb: {
+                        type: 'Hardware R&D · KiCad EDA · Firmware',
+                        name: 'Hardware R&D & PCB Design',
+                        emoji: '⚡',
+                        bg: 'linear-gradient(135deg,#1f2937,#111827)',
+                        tagline: 'Industrial-grade 4-8 layer differential PCB design using KiCad EDA. Integrated STM32WLE5 LoRa & ESP32-S3 Gateway with SI/PI optimization and robust industrial ESD protection.',
+                        metrics: [
+                            { val: '4 - 8', label: 'PCB Layers' },
+                            { val: 'IPC-610', label: 'Assembly Standard' },
+                            { val: '<15uA', label: 'Deep Sleep Current' },
+                        ],
+                        features: [
+                            'Schematic capture and multi-layer layout using KiCad EDA under industrial standards',
+                            'Impedance matching calculation and differential pairs routing for high-frequency RF',
+                            'Next-gen MCU integration: STM32WLE5 (integrated LoRa), ESP32-S3, Nordic nRF',
+                            'Industrial hardening: ESD protection, TVS surge clamping, and optocoupler galvanic isolation',
+                            'Embedded firmware development: bare-metal C and FreeRTOS deterministic real-time systems',
+                            'Rapid prototyping PCBA turnaround and seamless mass-production handover',
+                        ],
+                        tech: ['KiCad EDA', 'STM32CubeIDE', 'FreeRTOS', 'Bare-metal C/C++', 'STM32WLE5', 'ESP32-S3', 'LoRaWAN', 'Modbus RS485'],
+                    },
+                    iot: {
+                        type: 'IoT · SmartFarm · Industrial Telemetry',
+                        name: 'IoT Platform & SmartFarm / SmartLight',
+                        emoji: '🌱',
+                        bg: 'linear-gradient(135deg,#0e2a1f,#1f5a41)',
+                        tagline: 'Industrial IoT telemetry infrastructure and smart control platform. Integrating SmartFarm agricultural telemetry and city-scale SmartLight automated systems.',
+                        metrics: [
+                            { val: '100K+', label: 'Messages / sec' },
+                            { val: '99.99%', label: 'System Uptime' },
+                            { val: '10km', label: 'LoRa Wireless Range' },
+                        ],
+                        features: [
+                            'High-throughput distributed MQTT broker infrastructure ensuring zero telemetry packet loss',
+                            'SmartFarm telemetry stations: microclimate, soil NPK, pH, EC monitoring via LoRaWAN',
+                            'Precision automated irrigation cycles and multi-channel nutrient dosing automation',
+                            'SmartLight industrial lighting control system integrated with real-time GIS digital maps',
+                            'Intelligent astronomical schedule dimming algorithms reducing energy consumption by 40%+',
+                            'Edge computing architecture enabling nodes to operate autonomously during network outages',
+                        ],
+                        tech: ['LoRaWAN', 'MQTT Broker', 'ThingsBoard', 'TimescaleDB', 'PostgreSQL / PostGIS', 'FreeRTOS', 'Docker', 'Grafana'],
+                    },
+                    erp: {
+                        type: 'Enterprise ERP · Clean Architecture · AI Agents',
+                        name: 'Enterprise ERP & Business Software',
+                        emoji: '🏢',
+                        bg: 'linear-gradient(135deg,#00142b,#003a7a)',
+                        tagline: 'Comprehensive enterprise resource planning platform built on Clean Architecture and DDD. Integrated autonomous AI Agents for workflow automation and cross-departmental document reconciliation.',
+                        metrics: [
+                            { val: '10K+', label: 'Concurrent Users' },
+                            { val: '0%', label: 'Inventory Discrepancy' },
+                            { val: '99.99%', label: 'Uptime SLA' },
+                        ],
+                        features: [
+                            'Clean Architecture & DDD foundation, highly testable, maintainable, and built for 10-year lifespan',
+                            'Precise warehouse logistics: bin locations, batch lot tracking, barcode/QR, and strict FIFO',
+                            'Centralized procurement, sales orders, contracts, receivables, and multi-branch supply chain',
+                            'Autonomous AI Agents parsing documents, invoices, and contracts with automatic data extraction',
+                            'Dynamic multi-tier escalation approval workflows aligned with enterprise organization charts',
+                            'Granular Role-Based Access Control (RBAC) down to action-level and sensitive data fields',
+                        ],
+                        tech: ['Clean Architecture', 'Golang', 'NestJS / TypeScript', 'PostgreSQL', 'Redis', 'Kafka', 'React', 'Docker', 'Kubernetes'],
+                    },
                 },
-
-                iot: {
-                    type: 'IoT · SmartFarm · Industrial Telemetry',
-                    name: 'Hệ Thống IoT & SmartFarm / SmartLight',
-                    emoji: '🌱',
-                    bg: 'linear-gradient(135deg,#0e2a1f,#1f5a41)',
-                    tagline: 'Hạ tầng kết nối thiết bị IoT và nền tảng điều khiển viễn trắc thông minh. Tích hợp giải pháp quan trắc nông nghiệp số SmartFarm và mạng lưới chiếu sáng công nghiệp tầm xa SmartLight.',
-                    metrics: [
-                        { val: '100K+', label: 'Messages / giây' },
-                        { val: '99.99%', label: 'Uptime hệ thống' },
-                        { val: '10km', label: 'Phủ sóng không dây LoRa' },
-                    ],
-                    features: [
-                        'Hạ tầng MQTT Broker phân tán chịu tải cao, đảm bảo không thất thoát dữ liệu viễn trắc',
-                        'Trạm cảm biến quan trắc nông nghiệp SmartFarm: độ ẩm, dinh dưỡng đất NPK, pH, EC qua LoRaWAN',
-                        'Tự động hóa chu trình tưới tiêu chính xác và hệ thống châm phân dinh dưỡng đa kênh',
-                        'Hệ thống quản lý chiếu sáng công nghiệp SmartLight tích hợp bản đồ số GIS thời gian thực',
-                        'Thuật toán dimming tiết kiệm điện năng thông minh theo lịch trình thiên văn',
-                        'Kiến trúc Edge Computing cho phép các trạm cơ sở tự hoạt động ngay cả khi ngắt kết nối Internet',
-                    ],
-                    tech: ['LoRaWAN', 'MQTT Broker', 'ThingsBoard', 'TimescaleDB', 'PostgreSQL / PostGIS', 'FreeRTOS', 'Docker', 'Grafana'],
+                ja: {
+                    'camera-ai': {
+                        type: 'Computer Vision · Edge AI · Industrial',
+                        name: 'AIカメラ & コンピュータビジョン',
+                        emoji: '📹',
+                        bg: 'linear-gradient(135deg,#2b0a2a,#600f5f)',
+                        tagline: 'エッジコンピュータビジョンと深層学習によるリアルタイム映像分析システム。顔認識、流量カウント、製造欠陥検出、セキュリティ警告を20ms未満の遅延で実現。',
+                        metrics: [
+                            { val: '<20ms', label: 'エッジ推論遅延' },
+                            { val: '99.5%', label: '認識精度' },
+                            { val: '64+', label: '同時カメラストリーム' },
+                        ],
+                        features: [
+                            'エッジNPU（RK3588、Jetson）上での直接処理により、ネットワーク帯域コストを90%削減',
+                            'カスタムコンピュータビジョン：YOLO、車番OCR、顔認識、安全装備（PPE）検知',
+                            '異常行動検知：侵入警戒、転倒検知、火災・発煙検知、放置物検知',
+                            '既存IPカメラと完全互換のONVIF、RTSP、WebRTC工業規格サポート',
+                            'Webhook、Telegram、SMSと連携したリアルタイムインシデント警告エンジン',
+                            '企業データ保護基準に準拠したTLS暗号化RTSPストリーミング',
+                        ],
+                        tech: ['C++', 'Python', 'YOLOv10', 'NVIDIA TensorRT', 'OpenCV', 'RK3588 NPU', 'WebRTC', 'Go', 'Docker'],
+                    },
+                    pcb: {
+                        type: 'Hardware R&D · KiCad EDA · Firmware',
+                        name: 'ハードウェアR&D & PCB設計',
+                        emoji: '⚡',
+                        bg: 'linear-gradient(135deg,#1f2937,#111827)',
+                        tagline: 'KiCad EDAによる工業規格4-8層差動PCB設計。STM32WLE5 LoRaとESP32-S3ゲートウェイを統合し、シグナル完全性と工業用サージ保護を最適化。',
+                        metrics: [
+                            { val: '4 - 8', label: '基板層数' },
+                            { val: 'IPC-610', label: '実装規格' },
+                            { val: '<15uA', label: 'ディープスリープ電流' },
+                        ],
+                        features: [
+                            '工業規格KiCad EDAによる回路図設計および高密度多層PCBレイアウト',
+                            '高周波RF信号のためのインピーダンス制御および差動配線シミュレーション',
+                            '次世代MCU統合：STM32WLE5（LoRa内蔵）、ESP32-S3、Nordic nRF',
+                            '工業用保護回路：ESD静電気保護、TVSサージ抑制、フォトカプラ光学的絶縁',
+                            'ベアメタルCおよびFreeRTOSリアルタイム組み込みファームウェア開発',
+                            '迅速なPCBAプロトタイピングと量産移行サポート',
+                        ],
+                        tech: ['KiCad EDA', 'STM32CubeIDE', 'FreeRTOS', 'Bare-metal C/C++', 'STM32WLE5', 'ESP32-S3', 'LoRaWAN', 'Modbus RS485'],
+                    },
+                    iot: {
+                        type: 'IoT · SmartFarm · Industrial Telemetry',
+                        name: 'IoTプラットフォーム & スマートアグリ / スマート照明',
+                        emoji: '🌱',
+                        bg: 'linear-gradient(135deg,#0e2a1f,#1f5a41)',
+                        tagline: '産業用IoTテレメトリインフラおよび高度制御プラットフォーム。SmartFarm自動農業テレメトリと都市規模SmartLight照明ネットワークを統合。',
+                        metrics: [
+                            { val: '100K+', label: 'メッセージ / 秒' },
+                            { val: '99.99%', label: 'システム稼働率' },
+                            { val: '10km', label: 'LoRa通信距離' },
+                        ],
+                        features: [
+                            'テレメトリパケット損失ゼロを保証する高負荷耐性分散MQTTブローカー基盤',
+                            'SmartFarm農業観測局：LoRaWAN経由の微気候、土壌NPK、pH、EC監視',
+                            '精密自動灌漑サイクルおよび多系統液体肥料自動施肥制御',
+                            'リアルタイムGISデジタルマップを統合したSmartLight産業用照明制御',
+                            '天文スケジュールに基づく高度な調光アルゴリズムで電力を40%以上削減',
+                            'インターネット切断時も自律稼働可能なエッジコンピューティング構造',
+                        ],
+                        tech: ['LoRaWAN', 'MQTT Broker', 'ThingsBoard', 'TimescaleDB', 'PostgreSQL / PostGIS', 'FreeRTOS', 'Docker', 'Grafana'],
+                    },
+                    erp: {
+                        type: 'Enterprise ERP · Clean Architecture · AI Agents',
+                        name: '基幹ERP & エンタープライズソフトウェア',
+                        emoji: '🏢',
+                        bg: 'linear-gradient(135deg,#00142b,#003a7a)',
+                        tagline: 'Clean ArchitectureおよびDDDに基づき設計された包括的ERPシステム。自律型AIエージェントによる業務自動化と部門間データ照合を統合。',
+                        metrics: [
+                            { val: '10K+', label: '同時接続ユーザー' },
+                            { val: '0%', label: '在庫差異率' },
+                            { val: '99.99%', label: '稼働率SLA' },
+                        ],
+                        features: [
+                            'Clean Architecture & DDD設計による優れた保守性、テスト容易性、高い拡張性',
+                            '棚番ロケーション、ロット管理、バーコード/QR、FIFO準拠の精密倉庫管理',
+                            '購買、販売、契約、売掛買掛金、複数拠点サプライチェーンの一元管理',
+                            '請求書・帳票・契約書を自動解析・データ抽出する自律型AIエージェント',
+                            '組織階層に応じた動的マルチレベル承認ワークフロー',
+                            '操作単位および機密データ項目ごとの厳密なロールベースアクセス制御（RBAC）',
+                        ],
+                        tech: ['Clean Architecture', 'Golang', 'NestJS / TypeScript', 'PostgreSQL', 'Redis', 'Kafka', 'React', 'Docker', 'Kubernetes'],
+                    },
                 },
-
-                erp: {
-                    type: 'Enterprise ERP · Clean Architecture · AI Agents',
-                    name: 'Hệ Thống ERP & Phần Mềm Doanh Nghiệp',
-                    emoji: '🏢',
-                    bg: 'linear-gradient(135deg,#00142b,#003a7a)',
-                    tagline: 'Hệ thống quản trị nguồn lực doanh nghiệp toàn diện thiết kế theo kiến trúc Clean Architecture bền vững. Tích hợp giải pháp AI Agents tự động hóa quy trình nghiệp vụ và đối soát dữ liệu liên phòng ban.',
-                    metrics: [
-                        { val: '10K+', label: 'Người dùng đồng thời' },
-                        { val: '0%', label: 'Sai lệch số liệu kho' },
-                        { val: '99.99%', label: 'SLA Sẵn sàng' },
-                    ],
-                    features: [
-                        'Kiến trúc phần mềm Clean Architecture & DDD, dễ dàng kiểm thử, bảo trì và mở rộng lâu dài',
-                        'Quản lý kho vận chuẩn xác theo vị trí kệ, lô hàng, mã vạch/QR và phương pháp FIFO',
-                        'Quản lý quy trình mua bán hàng, hợp đồng, công nợ và chuỗi cung ứng đa chi nhánh',
-                        'Hệ thống AI Agents tự động đọc hiểu văn bản, hóa đơn, hồ sơ và trích xuất dữ liệu tự động',
-                        'Workflow phê duyệt động đa cấp độ, linh hoạt theo cơ cấu tổ chức doanh nghiệp',
-                        'Bảo mật phân quyền chi tiết (RBAC) đến từng hành động và từng trường dữ liệu nhạy cảm',
-                    ],
-                    tech: ['Clean Architecture', 'Golang', 'NestJS / TypeScript', 'PostgreSQL', 'Redis', 'Kafka', 'React', 'Docker', 'Kubernetes'],
+                ko: {
+                    'camera-ai': {
+                        type: 'Computer Vision · Edge AI · Industrial',
+                        name: 'AI 카메라 & 컴퓨터 비전',
+                        emoji: '📹',
+                        bg: 'linear-gradient(135deg,#2b0a2a,#600f5f)',
+                        tagline: '컴퓨터 비전 및 딥러닝 기반 엣지 실시간 영상 분석 시스템. 안면 인식, 유동 인구 계측, 제조 라인 불량 감지 및 보안 경고를 20ms 미만 지연시간으로 처리.',
+                        metrics: [
+                            { val: '<20ms', label: '엣지 추론 지연' },
+                            { val: '99.5%', label: '인식 정확도' },
+                            { val: '64+', label: '동시 카메라 스트림' },
+                        ],
+                        features: [
+                            '엣지 NPU(RK3588, Jetson) 온디바이스 직접 처리로 네트워크 대역폭 비용 90% 절감',
+                            '맞춤형 컴퓨터 비전: YOLO, 번호판 OCR, 안면 인식, 안전 장구(PPE) 착용 감지',
+                            '이상 행동 감지: 침입 감지, 낙상 감지, 화재·연기 감지, 방치물 감지',
+                            '기존 IP 카메라와 호환되는 ONVIF, RTSP, WebRTC 산업 표준 지원',
+                            'Webhook, Telegram, SMS와 연동된 실시간 사고 알림 엔진',
+                            '기업 데이터 보안 규정을 준수하는 TLS 암호화 RTSP 스트리밍',
+                        ],
+                        tech: ['C++', 'Python', 'YOLOv10', 'NVIDIA TensorRT', 'OpenCV', 'RK3588 NPU', 'WebRTC', 'Go', 'Docker'],
+                    },
+                    pcb: {
+                        type: 'Hardware R&D · KiCad EDA · Firmware',
+                        name: '하드웨어 R&D & PCB 설계',
+                        emoji: '⚡',
+                        bg: 'linear-gradient(135deg,#1f2937,#111827)',
+                        tagline: 'KiCad EDA 기반 산업용 4-8층 차동 PCB 설계. STM32WLE5 LoRa 및 ESP32-S3 게이트웨이 통합, 신호 무결성 및 산업용 서지 보호 최적화.',
+                        metrics: [
+                            { val: '4 - 8', label: '기판 층수' },
+                            { val: 'IPC-610', label: '제조 표준' },
+                            { val: '<15uA', label: '딥슬립 전류' },
+                        ],
+                        features: [
+                            '산업 표준 KiCad EDA 기반 회로도 설계 및 고밀도 다층 PCB 레이아웃',
+                            '고주파 RF 신호를 위한 임피던스 제어 및 차동 배선 시뮬레이션',
+                            '차세대 MCU 통합: STM32WLE5(LoRa 내장), ESP32-S3, Nordic nRF',
+                            '산업용 보호 설계: ESD 정전기 방지, TVS 서지 보호, 포토커플러 절연',
+                            '베어메탈 C 및 FreeRTOS 기반 실시간 임베디드 펌웨어 개발',
+                            '신속한 PCBA 프로토타이핑 및 양산 이관 지원',
+                        ],
+                        tech: ['KiCad EDA', 'STM32CubeIDE', 'FreeRTOS', 'Bare-metal C/C++', 'STM32WLE5', 'ESP32-S3', 'LoRaWAN', 'Modbus RS485'],
+                    },
+                    iot: {
+                        type: 'IoT · SmartFarm · Industrial Telemetry',
+                        name: 'IoT 플랫폼 & 스마트팜 / 스마트 조명',
+                        emoji: '🌱',
+                        bg: 'linear-gradient(135deg,#0e2a1f,#1f5a41)',
+                        tagline: '산업용 IoT 텔레메트리 인프라 및 스마트 제어 플랫폼. SmartFarm 정밀 농업 관측과 도시 규모 SmartLight 자동화 조명 시스템 통합.',
+                        metrics: [
+                            { val: '100K+', label: '초당 메시지 수' },
+                            { val: '99.99%', label: '시스템 가동률' },
+                            { val: '10km', label: 'LoRa 통신 반경' },
+                        ],
+                        features: [
+                            '텔레메트리 패킷 손실 없는 고처리량 분산 MQTT 브로커 인프라',
+                            'SmartFarm 농업 관측소: LoRaWAN 기반 미기후, 토양 NPK, pH, EC 정밀 모니터링',
+                            '정밀 자동 관수 주기 및 다채널 양액 자동 시비 제어',
+                            '실시간 GIS 디지털 맵이 통합된 SmartLight 산업용 조명 제어 시스템',
+                            '천문 일정 기반 스마트 디밍 알고리즘으로 전력 소비 40% 이상 절감',
+                            '네트워크 단절 시에도 자체 자율 동작하는 엣지 컴퓨팅 아키텍처',
+                        ],
+                        tech: ['LoRaWAN', 'MQTT Broker', 'ThingsBoard', 'TimescaleDB', 'PostgreSQL / PostGIS', 'FreeRTOS', 'Docker', 'Grafana'],
+                    },
+                    erp: {
+                        type: 'Enterprise ERP · Clean Architecture · AI Agents',
+                        name: '엔터프라이즈 ERP & 비즈니스 소프트웨어',
+                        emoji: '🏢',
+                        bg: 'linear-gradient(135deg,#00142b,#003a7a)',
+                        tagline: 'Clean Architecture 및 DDD 기반의 포괄적 엔터프라이즈 ERP 시스템. 자율 AI 에이전트를 결합하여 부서 간 업무 자동화 및 문서 대사 처리.',
+                        metrics: [
+                            { val: '10K+', label: '동시 사용자 수' },
+                            { val: '0%', label: '재고 오차율' },
+                            { val: '99.99%', label: '가동률 SLA' },
+                        ],
+                        features: [
+                            'Clean Architecture 및 DDD 아키텍처로 뛰어난 유지보수성과 확장성 보장',
+                            '랙 위치, 로트 관리, 바코드/QR, 선입선출(FIFO) 기반의 정밀 창고 물류 관리',
+                            '구매 조달, 영업 수주, 계약, 채권채무 및 다지점 공급망 통합 관리',
+                            '문서, 세금계산서, 계약서를 자동 분석하여 데이터를 추출하는 자율 AI 에이전트',
+                            '기업 조직도에 연동되는 동적 다단계 결재 승인 워크플로우',
+                            '기능 단위 및 민감 필드별 정밀 역할 기반 접근 제어(RBAC)',
+                        ],
+                        tech: ['Clean Architecture', 'Golang', 'NestJS / TypeScript', 'PostgreSQL', 'Redis', 'Kafka', 'React', 'Docker', 'Kubernetes'],
+                    },
                 },
             };
 
             /* Reuse the same proj-modal DOM — lazy get at click-time */
             function openService(key) {
-                const s = SERVICES[key];
+                const lang = (window && window.currentLang) || 'vi';
+                const s = (SERVICES[lang] && SERVICES[lang][key]) || (SERVICES.vi && SERVICES.vi[key]) || SERVICES[key];
                 if (!s) return;
 
                 const overlay = document.getElementById('projOverlay');
@@ -617,8 +875,7 @@
                 const body = document.getElementById('projBody');
                 if (!overlay || !modal || !visual || !body) return;
 
-                const currentLang = window.currentLang || (typeof currentLang !== 'undefined' ? currentLang : 'vi');
-                const dict = (window.T && window.T[currentLang]) || (typeof T !== 'undefined' && T[currentLang]) || {};
+                const dict = (window && window.T && window.T[lang]) || {};
                 const titleMetrics = dict['modal.metrics'] || 'Chỉ số nổi bật';
                 const titleFeatures = dict['modal.features'] || 'Tính năng & khả năng';
                 const titleTech = dict['modal.tech'] || 'Công nghệ sử dụng';
@@ -1051,8 +1308,8 @@
                 const p = PROJECTS[key];
                 if (!p) return;
 
-                const currentLang = window.currentLang || (typeof currentLang !== 'undefined' ? currentLang : 'vi');
-                const dict = (window.T && window.T[currentLang]) || (typeof T !== 'undefined' && T[currentLang]) || {};
+                const lang = (window && window.currentLang) || 'vi';
+                const dict = (window && window.T && window.T[lang]) || {};
                 const titleMetrics = dict['modal.metrics'] || 'Chỉ số nổi bật';
                 const titleFeatures = dict['modal.features'] || 'Tính năng & khả năng';
                 const titleTech = dict['modal.tech'] || 'Công nghệ sử dụng';
