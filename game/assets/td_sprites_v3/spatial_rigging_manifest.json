@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "version": "4.0.0",
+    "standard": "TD_VISION_AI_QA_AND_RIGGING_STANDARD_V4",
+    "generated_at": "2026-10-17T16:15:19Z",
+    "coordinate_system": "ortho_canvas_top_left_px",
+    "description": "Calibrated spatial rigging anchors, road skeleton masks, socket pads, and kinematic parameters for Tower Defense v3/v4."
+  },
+  "maps": {
+    "16x9": {
+      "dimensions": { "width": 1920, "height": 1080 },
+      "road_hsv_mask": {
+        "h_range1": [0, 25],
+        "h_range2": [170, 180],
+        "s_range": [20, 190],
+        "v_range": [90, 255]
+      },
+      "water_hsv_mask": {
+        "h_range": [90, 135],
+        "s_range": [50, 255],
+        "v_range": [50, 255]
+      },
+      "river_column_span": [1247, 1444],
+      "bridges": [
+        { "id": "upper_bridge", "y_center": 505, "y_span": [414, 594], "x_span": [1247, 1444] },
+        { "id": "lower_bridge", "y_center": 912, "y_span": [822, 983], "x_span": [1247, 1444] }
+      ],
+      "waypoints_lanes": {
+        "upper_lane": [
+          { "x": 90, "y": 279 },
+          { "x": 955, "y": 279 },
+          { "x": 955, "y": 505 },
+          { "x": 1840, "y": 505 }
+        ],
+        "lower_lane": [
+          { "x": 90, "y": 279 },
+          { "x": 955, "y": 279 },
+          { "x": 955, "y": 912 },
+          { "x": 1840, "y": 912 }
+        ]
+      },
+      "waypoints": [
+        { "x": 90, "y": 279 },
+        { "x": 955, "y": 279 },
+        { "x": 955, "y": 505 },
+        { "x": 1840, "y": 505 }
+      ],
+      "sockets": [
+        { "id": "sock_0", "x": 480, "y": 450, "pad_radius": 70, "padRadius": 70 },
+        { "id": "sock_1", "x": 760, "y": 660, "pad_radius": 70, "padRadius": 70 },
+        { "id": "sock_2", "x": 1120, "y": 700, "pad_radius": 70, "padRadius": 70 },
+        { "id": "sock_3", "x": 1120, "y": 310, "pad_radius": 70, "padRadius": 70 },
+        { "id": "sock_4", "x": 1580, "y": 700, "pad_radius": 70, "padRadius": 70 }
+      ]
+    },
+    "9x16": {
+      "dimensions": { "width": 1080, "height": 1920 },
+      "road_hsv_mask": {
+        "h_range1": [0, 25],
+        "h_range2": [170, 180],
+        "s_range": [20, 190],
+        "v_range": [90, 255]
+      },
+      "waypoints": [
+        { "x": 358, "y": 90, "facing": 1 },
+        { "x": 358, "y": 600, "facing": 1 },
+        { "x": 854, "y": 600, "facing": 1 },
+        { "x": 854, "y": 1200, "facing": -1 },
+        { "x": 225, "y": 1200, "facing": -1 },
+        { "x": 225, "y": 1550, "facing": 1 },
+        { "x": 539, "y": 1550, "facing": 1 },
+        { "x": 539, "y": 1840, "facing": 1 }
+      ],
+      "sockets": [
+        { "id": "sock_p0", "x": 620, "y": 380, "pad_radius": 60, "padRadius": 60 },
+        { "id": "sock_p1", "x": 530, "y": 840, "pad_radius": 60, "padRadius": 60 },
+        { "id": "sock_p2", "x": 540, "y": 1380, "pad_radius": 50, "padRadius": 50 },
+        { "id": "sock_p3", "x": 790, "y": 1780, "pad_radius": 60, "padRadius": 60 }
+      ]
+    }
+  },
+  "towers": {
+    "archer": {
+      "topdown": {
+        "pivot": [256.0, 256.0],
+        "render_size": [120, 120],
+        "renderSize": [120, 120],
+        "intrinsic_angle_offset": 0.0,
+        "intrinsicAngleOffset": 0.0,
+        "barrel_radius": 48.0,
+        "barrelRadius": 48.0,
+        "muzzle_radius_world": 41.72,
+        "muzzleRadiusWorld": 41.72,
+        "muzzle_tip": { "x": 48.0, "y": 0.0 },
+        "muzzleTip": { "x": 48.0, "y": 0.0 },
+        "projectile_type": "arrow"
+      },
+      "2.5d": {
+        "pad_offset": { "x": 0, "y": 0 },
+        "padOffset": { "x": 0, "y": 0 },
+        "body_offset": { "x": 0, "y": -85 },
+        "bodyOffset": { "x": 0, "y": -85 },
+        "body_draw": { "w": 120, "h": 120, "ox": -60, "oy": -85 },
+        "unit_offset": { "x": 0, "y": -85 },
+        "unitOffset": { "x": 0, "y": -85 },
+        "unit_anchor": { "ox": 0, "oy": -85, "w": 96, "h": 96 },
+        "muzzle_offset": { "dx": 26.6, "dy": -17.2, "world_dx": 26.6, "world_dy": -102.2 },
+        "muzzleOffset": { "dx": 26.6, "dy": -17.2, "worldDx": 26.6, "worldDy": -102.2 },
+        "projectile_type": "arrow"
+      }
+    },
+    "mage": {
+      "topdown": {
+        "pivot": [256.0, 256.0],
+        "render_size": [120, 120],
+        "renderSize": [120, 120],
+        "intrinsic_angle_offset": 0.0,
+        "intrinsicAngleOffset": 0.0,
+        "barrel_radius": 52.0,
+        "barrelRadius": 52.0,
+        "muzzle_radius_world": 45.94,
+        "muzzleRadiusWorld": 45.94,
+        "muzzle_tip": { "x": 52.0, "y": 0.0 },
+        "muzzleTip": { "x": 52.0, "y": 0.0 },
+        "projectile_type": "mage_bolt"
+      },
+      "2.5d": {
+        "pad_offset": { "x": 0, "y": 0 },
+        "padOffset": { "x": 0, "y": 0 },
+        "body_offset": { "x": 0, "y": -85 },
+        "bodyOffset": { "x": 0, "y": -85 },
+        "body_draw": { "w": 120, "h": 120, "ox": -60, "oy": -85 },
+        "unit_offset": { "x": 0, "y": -85 },
+        "unitOffset": { "x": 0, "y": -85 },
+        "unit_anchor": { "ox": 0, "oy": -85, "w": 96, "h": 96 },
+        "muzzle_offset": { "dx": 24.4, "dy": -22.9, "world_dx": 24.4, "world_dy": -107.9 },
+        "muzzleOffset": { "dx": 24.4, "dy": -22.9, "worldDx": 24.4, "worldDy": -107.9 },
+        "projectile_type": "mage_bolt"
+      }
+    },
+    "cannon": {
+      "topdown": {
+        "pivot": [256.0, 256.0],
+        "render_size": [120, 120],
+        "renderSize": [120, 120],
+        "intrinsic_angle_offset": 3.14159,
+        "intrinsicAngleOffset": 3.14159,
+        "barrel_radius": 46.0,
+        "barrelRadius": 46.0,
+        "muzzle_radius_world": 45.47,
+        "muzzleRadiusWorld": 45.47,
+        "muzzle_tip": { "x": 46.0, "y": 0.0 },
+        "muzzleTip": { "x": 46.0, "y": 0.0 },
+        "projectile_type": "cannonball"
+      },
+      "2.5d": {
+        "pad_offset": { "x": 0, "y": 0 },
+        "padOffset": { "x": 0, "y": 0 },
+        "body_offset": { "x": 0, "y": -85 },
+        "bodyOffset": { "x": 0, "y": -85 },
+        "body_draw": { "w": 120, "h": 120, "ox": -60, "oy": -85 },
+        "unit_offset": { "x": 0, "y": -72 },
+        "unitOffset": { "x": 0, "y": -72 },
+        "unit_anchor": { "ox": 0, "oy": -72, "w": 96, "h": 96 },
+        "muzzle_offset": { "dx": 37.9, "dy": -3.0, "world_dx": 37.9, "world_dy": -75.0 },
+        "muzzleOffset": { "dx": 37.9, "dy": -3.0, "worldDx": 37.9, "worldDy": -75.0 },
+        "projectile_type": "cannonball"
+      }
+    },
+    "frost": {
+      "topdown": {
+        "pivot": [256.0, 256.0],
+        "render_size": [120, 120],
+        "renderSize": [120, 120],
+        "intrinsic_angle_offset": 0.0,
+        "intrinsicAngleOffset": 0.0,
+        "barrel_radius": 50.0,
+        "barrelRadius": 50.0,
+        "muzzle_radius_world": 45.94,
+        "muzzleRadiusWorld": 45.94,
+        "muzzle_tip": { "x": 50.0, "y": 0.0 },
+        "muzzleTip": { "x": 50.0, "y": 0.0 },
+        "projectile_type": "frost_shard"
+      },
+      "2.5d": {
+        "pad_offset": { "x": 0, "y": 0 },
+        "padOffset": { "x": 0, "y": 0 },
+        "body_offset": { "x": 0, "y": -85 },
+        "bodyOffset": { "x": 0, "y": -85 },
+        "body_draw": { "w": 120, "h": 120, "ox": -60, "oy": -85 },
+        "unit_offset": { "x": 0, "y": -76 },
+        "unitOffset": { "x": 0, "y": -76 },
+        "unit_anchor": { "ox": 0, "oy": -76, "w": 96, "h": 96 },
+        "muzzle_offset": { "dx": 27.0, "dy": -2.6, "world_dx": 27.0, "world_dy": -78.6 },
+        "muzzleOffset": { "dx": 27.0, "dy": -2.6, "worldDx": 27.0, "worldDy": -78.6 },
+        "projectile_type": "frost_shard"
+      }
+    }
+  },
+  "creeps": {
+    "goblin": {
+      "render_size": 75,
+      "renderSize": 75,
+      "foot_offset_y": 33.1,
+      "footOffsetY": 33.1,
+      "speed": 110
+    },
+    "wolf": {
+      "render_size": 75,
+      "renderSize": 75,
+      "foot_offset_y": 33.4,
+      "footOffsetY": 33.4,
+      "speed": 160
+    },
+    "orc": {
+      "render_size": 95,
+      "renderSize": 95,
+      "foot_offset_y": 43.5,
+      "footOffsetY": 43.5,
+      "speed": 80
+    },
+    "golem": {
+      "render_size": 130,
+      "renderSize": 130,
+      "foot_offset_y": 61.0,
+      "footOffsetY": 61.0,
+      "speed": 45
+    }
+  },
+  "projectiles": {
+    "arrow": {
+      "size": [24, 24],
+      "intrinsic_rotation_rad": 0.6545,
+      "intrinsicRotationRad": 0.6545,
+      "intrinsic_angle_deg": -37.5,
+      "intrinsicAngleDeg": -37.5,
+      "rotation_compensation_rad": 0.6545,
+      "rotationCompensationRad": 0.6545
+    },
+    "mage_bolt": {
+      "size": [24, 24],
+      "intrinsic_rotation_rad": 0.785398,
+      "intrinsicRotationRad": 0.785398,
+      "intrinsic_angle_deg": -45.0,
+      "intrinsicAngleDeg": -45.0,
+      "rotation_compensation_rad": 0.785398,
+      "rotationCompensationRad": 0.785398
+    },
+    "cannonball": {
+      "size": [24, 24],
+      "intrinsic_rotation_rad": 0.0,
+      "intrinsicRotationRad": 0.0,
+      "intrinsic_angle_deg": 0.0,
+      "intrinsicAngleDeg": 0.0,
+      "rotation_compensation_rad": 0.0,
+      "rotationCompensationRad": 0.0
+    },
+    "frost_shard": {
+      "size": [24, 24],
+      "intrinsic_rotation_rad": -2.35619,
+      "intrinsicRotationRad": -2.35619,
+      "intrinsic_angle_deg": -135.0,
+      "intrinsicAngleDeg": -135.0,
+      "rotation_compensation_rad": 0.0,
+      "rotationCompensationRad": 0.0
+    }
+  }
+}

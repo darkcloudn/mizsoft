@@ -1424,8 +1424,8 @@
       font-weight: 500;
     }
 
-    /* MODULE 0: POST-MORTEM CARDS */
-    .postmortem-grid {
+    /* MODULE 0: SHOWCASE CARDS */
+    .showcase-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 16px;
@@ -1433,7 +1433,7 @@
       box-sizing: border-box;
       max-width: 100%;
     }
-    .postmortem-card {
+    .showcase-card {
       background: var(--surface-card-cream);
       border: 1px solid var(--border);
       border-radius: 16px;
@@ -1445,7 +1445,7 @@
       box-sizing: border-box;
       max-width: 100%;
     }
-    .postmortem-card-title {
+    .showcase-card-title {
       font-size: 14px;
       font-weight: 800;
       color: var(--color-ocean-teal-hover);
@@ -2362,14 +2362,14 @@
     }
 
   
-    /* CLIENT EDITION STREAMLINING RULES — HIDE ALL INTERNAL SPECS, PROMPTS & DEBUG TOOLS */
-    #td-module-postmortem,
+    /* Client Edition Layout Rules */
+    #td-module-showcase,
     .td-diagnostics-card,
     .anatomy-blueprint-block,
     .spec-strip-4,
-    #btn-toggle-vision-ai,
-    label:has(#chk-overlay-vision-ai-25d),
-    label:has(#chk-overlay-vision-ai-topdown),
+    #btn-toggle-kinematic,
+    label:has(#chk-overlay-kinematic-25d),
+    label:has(#chk-overlay-kinematic-topdown),
     label:has(#chk-overlay-crosshairs) {
       display: none !important;
     }
@@ -4172,7 +4172,7 @@
               <div class="map-radial-action-btn" style="top: 50%; left: 8px; transform: translateY(-50%);" title="Xây Tháp Băng Giá (Frost)" onclick="buildTowerOnActiveSocket('frost')">
                 <img src="assets/td_sprites_v3/ui_btn_frost.png" alt="Frost">
               </div>
-              <!-- Close button on ring perimeter (keeping center 100% clear per Law 14) -->
+              <!-- Close button on ring perimeter (keeping center 100% clear per Standard Specification) -->
               <div class="map-radial-action-btn" style="bottom: 14px; right: 14px; width: 30px; height: 30px; border-color: #ef4444;" title="Đóng Menu" onclick="closeMapRadial()">
                 <img src="assets/td_sprites_v3/ui_btn_close.png" alt="Close">
               </div>
@@ -9867,7 +9867,7 @@
     }
 
     // =========================================================================
-    // CALIBRATED SPATIAL RIGGING & VISION AI MANIFEST (STANDARD V4 / LAW 15)
+    // CALIBRATED SPATIAL RIGGING & KINEMATIC MANIFEST (STANDARD V4 / Standard Specification)
     // =========================================================================
     const SPATIAL_MANIFEST = {
       maps: {
@@ -9972,7 +9972,7 @@
     let labTopdownArchetype = 'archer';
     let labAutoRotate = false;
     let labTurretAngle = 0;
-    let labVisionAI = false;
+    let labKinematicInspect = false;
 
     function switchLabMode(mode) {
       labCurrentMode = mode;
@@ -10001,7 +10001,7 @@
       const topdownTurret = document.getElementById('comp-layer-3');
       if (topdownBase) topdownBase.src = 'assets/td_sprites_v3/tower_' + arch + '_body.png';
       if (topdownTurret) topdownTurret.src = 'assets/td_sprites_v3/tower_' + arch + '_turret.png';
-      if (labVisionAI) drawLabVisionAIOverlay();
+      if (labKinematicInspect) drawLabKinematicOverlay();
     }
 
     function setLabTopdownArchetype(arch) {
@@ -10031,7 +10031,7 @@
         if (unit) unit.style.transform = 'translateX(-50%) scaleX(1)';
         if (flipDisplay) flipDisplay.innerText = 'scaleX(1) [Hướng Mặt: Phải]';
       }
-      if (labVisionAI) drawLabVisionAIOverlay();
+      if (labKinematicInspect) drawLabKinematicOverlay();
     }
 
     function toggleTargetDummySide() {
@@ -10131,7 +10131,7 @@
         ctx.drawImage(pImg, -10, -10, 20, 20);
         ctx.restore();
 
-        if (labVisionAI) drawLabVisionAILayers(ctx, canvas.width, canvas.height);
+        if (labKinematicInspect) drawLabKinematicLayers(ctx, canvas.width, canvas.height);
 
         if (progress < 1) {
           requestAnimationFrame(animP);
@@ -10159,7 +10159,7 @@
         } else {
           clearInterval(vfxInterval);
           ctx.clearRect(0, 0, canvas.width, canvas.height);
-          if (labVisionAI) drawLabVisionAILayers(ctx, canvas.width, canvas.height);
+          if (labKinematicInspect) drawLabKinematicLayers(ctx, canvas.width, canvas.height);
         }
       }, 70);
 
@@ -10188,27 +10188,27 @@
       if (chk) chk.checked = show;
     }
 
-    function toggleLab25dVisionAI(show) {
-      labVisionAI = show;
-      drawLabVisionAIOverlay();
+    function toggleLab25dKinematic(show) {
+      labKinematicInspect = show;
+      drawLabKinematicOverlay();
     }
 
-    function toggleLabTopdownVisionAI(show) {
-      labVisionAI = show;
-      drawLabVisionAIOverlay();
+    function toggleLabTopdownKinematic(show) {
+      labKinematicInspect = show;
+      drawLabKinematicOverlay();
     }
 
-    function drawLabVisionAIOverlay() {
+    function drawLabKinematicOverlay() {
       const canvas = document.getElementById('lab-projectile-canvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      if (labVisionAI) {
-        drawLabVisionAILayers(ctx, canvas.width, canvas.height);
+      if (labKinematicInspect) {
+        drawLabKinematicLayers(ctx, canvas.width, canvas.height);
       }
     }
 
-    function drawLabVisionAILayers(ctx, width, height) {
+    function drawLabKinematicLayers(ctx, width, height) {
       ctx.save();
       const mConf = (SPATIAL_MANIFEST.towers[lab25dArchetype] && SPATIAL_MANIFEST.towers[lab25dArchetype]['2.5d']) ?
                     SPATIAL_MANIFEST.towers[lab25dArchetype]['2.5d'].muzzleOffset :
@@ -10403,7 +10403,7 @@
       score: 1280,
       screenShake: 0,
       activeSocketIdx: -1,
-      visionAI: false,
+      kinematicInspect: false,
       towers: [
         { socketIdx: 0, type: 'archer', cooldown: 0, angle: 0, recoil: 0, flipX: 1, animFrame: 0 },
         { socketIdx: 2, type: 'mage', cooldown: 0, angle: 0, recoil: 0, flipX: 1, animFrame: 0 },
@@ -10455,6 +10455,8 @@
     ];
 
     function setDemoAspect(asp) {
+      if (asp === '9:16' || asp === '9x16') asp = '9x16';
+      else if (asp === '16:9' || asp === '16x9') asp = '16x9';
       const prevAspect = demoState.aspect;
       demoState.aspect = asp;
       document.getElementById('btn-map-orient-16x9').classList.toggle('active', asp === '16x9');
@@ -10651,7 +10653,7 @@
           c.vx = (dist > 0.001) ? (dx / dist) * c.speed : 0;
           c.vy = (dist > 0.001) ? (dy / dist) * c.speed : 0;
 
-          // Law 15: Directional Facing Sync (Zero Moonwalk)
+          // Production Standard: Directional Facing Sync (Zero Moonwalk)
           if (dx < -0.1) {
             c.facingX = -1;
           } else if (dx > 0.1) {
@@ -10856,13 +10858,13 @@
         spawnDemoWave();
       }
 
-      // Continuous Live Vision AI Telemetry update (per-frame dynamic computation)
-      updateVisionAITelemetryData();
+      // Continuous Live Kinematic Telemetry update (per-frame dynamic computation)
+      updateKinematicTelemetryData();
     }
 
     function render16x9Simulation() {
       const canvas = document.getElementById('sim-canvas-16x9');
-      if (!canvas || demoState.aspect !== '16x9') return;
+      if (!canvas || (demoState.aspect !== '16x9' && demoState.aspect !== '16:9')) return;
       const ctx = canvas.getContext('2d');
       ctx.save();
 
@@ -10916,7 +10918,7 @@
           ctx.filter = 'brightness(2.0)';
         }
 
-        // Law 15: Directional Facing Flip (scaleX = -1 when facing West, scaleX = 1 when East)
+        // Production Standard: Directional Facing Flip (scaleX = -1 when facing West, scaleX = 1 when East)
         ctx.save();
         ctx.scale(c.facingX || 1, 1);
         if (walkSheet.complete && walkSheet.width > 0) {
@@ -11066,9 +11068,9 @@
         ctx.restore();
       });
 
-      // 8. Vision AI Telemetry Overlay (5-Layer Inspector)
-      if (demoState.visionAI) {
-        renderVisionAITelemetry(ctx, 1920, 1080, true);
+      // 8. Kinematic Telemetry Overlay (5-Layer Inspector)
+      if (demoState.kinematicInspect) {
+        renderKinematicTelemetry(ctx, 1920, 1080, true);
       }
 
       ctx.restore();
@@ -11076,7 +11078,7 @@
 
     function render9x16Simulation() {
       const canvas = document.getElementById('sim-canvas-9x16');
-      if (!canvas || demoState.aspect !== '9x16') return;
+      if (!canvas || (demoState.aspect !== '9x16' && demoState.aspect !== '9:16')) return;
       const ctx = canvas.getContext('2d');
       ctx.save();
 
@@ -11120,7 +11122,7 @@
         ctx.translate(c.x, c.y + bobY);
         if (c.hitFlash > 0) ctx.filter = 'brightness(2.0)';
 
-        // Law 15: Directional Facing Flip (scaleX = -1 when facing West, scaleX = 1 when East)
+        // Production Standard: Directional Facing Flip (scaleX = -1 when facing West, scaleX = 1 when East)
         ctx.save();
         ctx.scale(c.facingX || 1, 1);
         if (walkSheet.complete && walkSheet.width > 0) {
@@ -11267,25 +11269,25 @@
         ctx.restore();
       });
 
-      // 8. Vision AI Telemetry Overlay (5-Layer Inspector)
-      if (demoState.visionAI) {
-        renderVisionAITelemetry(ctx, 1080, 1920, false);
+      // 8. Kinematic Telemetry Overlay (5-Layer Inspector)
+      if (demoState.kinematicInspect) {
+        renderKinematicTelemetry(ctx, 1080, 1920, false);
       }
 
       ctx.restore();
     }
 
-    // Interactive Vision AI HUD Controller & Telemetry Exposer
-    function toggleVisionAIOverlay() {
-      demoState.visionAI = !demoState.visionAI;
-      const btn = document.getElementById('btn-toggle-vision-ai');
+    // Interactive Kinematic HUD Controller & Telemetry Exposer
+    function toggleKinematicOverlay() {
+      demoState.kinematicInspect = !demoState.kinematicInspect;
+      const btn = document.getElementById('btn-toggle-kinematic');
       if (btn) {
-        btn.classList.toggle('active', demoState.visionAI);
-        btn.innerHTML = demoState.visionAI
-          ? '👁️ Tắt Vision AI Inspector (Đang Bật)'
-          : '👁️ Bật Vision AI Inspector (Soi Tâm Nòng, Đường Đi &amp; Hitbox)';
+        btn.classList.toggle('active', demoState.kinematicInspect);
+        btn.innerHTML = demoState.kinematicInspect
+          ? '👁️ Tắt Kinematic Inspector (Đang Bật)'
+          : '👁️ Bật Kinematic Inspector (Soi Tâm Nòng, Đường Đi &amp; Hitbox)';
       }
-      updateVisionAITelemetryData();
+      updateKinematicTelemetryData();
     }
 
     function distToSegment(px, py, x1, y1, x2, y2) {
@@ -11300,7 +11302,7 @@
     let lastKnownMaxMuzzleError = 0.0;
     let lastKnownMinSocketDist = 41.7;
 
-    function updateVisionAITelemetryData() {
+    function updateKinematicTelemetryData() {
       const is16x9 = (demoState.aspect === '16x9');
       const leftFacing = demoState.creeps.filter(c => c.facingX === -1).length;
       const rightFacing = demoState.creeps.filter(c => c.facingX !== -1).length;
@@ -11407,8 +11409,8 @@
         faceSyncPct >= 99.0
       ) ? 'PASS' : 'FAIL';
 
-      window.__visionAITelemetry = {
-        active: !!demoState.visionAI,
+      window.__kinematicTelemetry = {
+        active: !!demoState.kinematicInspect,
         aspect: demoState.aspect,
         mode: demoState.mode,
         overallStatus: overall,
@@ -11427,7 +11429,7 @@
       };
     }
 
-    function renderVisionAITelemetry(ctx, width, height, is16x9) {
+    function renderKinematicTelemetry(ctx, width, height, is16x9) {
       ctx.save();
 
       // ==========================================
@@ -11651,9 +11653,9 @@
       // Scoreboard Header
       ctx.font = 'bold 16px system-ui, sans-serif';
       ctx.fillStyle = '#22d3ee';
-      ctx.fillText('👁️ VISION AI SPATIAL QA ENGINE v4.0.0', boxX + 16, boxY + 28);
+      ctx.fillText('👁️ KINEMATIC SPATIAL ENGINE v4.0.0', boxX + 16, boxY + 28);
 
-      const telem = window.__visionAITelemetry || {};
+      const telem = window.__kinematicTelemetry || {};
       const muzErr = (telem.maxMuzzleErrorPx !== undefined ? telem.maxMuzzleErrorPx : 0.0);
       const sockDist = (telem.minSocketDistPx !== undefined ? telem.minSocketDistPx : 41.7);
       const collin = (telem.maxCollinearityDeg !== undefined ? telem.maxCollinearityDeg : 0.0);
@@ -11730,7 +11732,7 @@
       preloadV3Assets();
       initSpriteSheetPlayer();
       startCanvasSimulationLoop();
-      updateVisionAITelemetryData();
+      updateKinematicTelemetryData();
 
       // Deep-link to #td-sprite-studio
       if (hash === '#td-sprite-studio' || params.get('studio') === '1') {
